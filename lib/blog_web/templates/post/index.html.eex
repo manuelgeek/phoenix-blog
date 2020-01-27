@@ -1,0 +1,59 @@
+<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: 'Latest Posts' %>
+<div class="container">
+   <div class="row">
+       <div class="col-md-9">
+           <div class="blog-posts">
+           <%= for post <- @posts do %>
+               <article class="post post-large">
+                   <div class="post-image">
+                       <div class="owl-carousel" data-plugin-options='{"items":1}'>
+                           <div>
+                               <div class="img-thumbnail">
+                                   <img class="img-responsive" src="/dist/img/blog/blog-image-3.jpg" alt="">
+                               </div>
+                           </div>
+                           <div>
+                               <div class="img-thumbnail">
+                                   <img class="img-responsive" src="/dist/img/blog/blog-image-2.jpg" alt="">
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="post-date">
+                       <span class="day">10</span>
+                       <span class="month">Jan</span>
+                   </div>
+
+                   <div class="post-content">
+
+                       <h2><a href="<%= Routes.post_path(@conn, :show, post) %>"><%= post.title %></a></h2>
+                       <p><%= post.body %></p>
+
+                       <div class="post-meta">
+                           <span><i class="fa fa-user"></i> By <a href="#">John Doe</a> </span>
+                           <span><i class="fa fa-tag"></i> <a href="#">Duis</a>, <a href="#">News</a> </span>
+                           <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
+                           <a href="<%= Routes.post_path(@conn, :show, post) %>" class="btn btn-xs btn-primary pull-right">Read more...</a>
+                       </div>
+
+                   </div>
+               </article>
+           <% end %>
+
+               <ul class="pagination pagination-lg pull-right">
+                   <li><a href="#">«</a></li>
+                   <li class="active"><a href="#">1</a></li>
+                   <li><a href="#">2</a></li>
+                   <li><a href="#">3</a></li>
+                   <li><a href="#">»</a></li>
+               </ul>
+
+           </div>
+       </div>
+
+       <%= render BlogWeb.PartialsView, "post/_aside.html", assigns %>
+   </div>
+</div>
+
+<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>

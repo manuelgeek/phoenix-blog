@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Elixir Module" />
+        <option value="Elixir Template" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WTnG9fHWlgJrGoA5KcR5tV65FJ" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="stylesheet.code.style.group" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="" />
+      <created>1579182354197</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579182354197</updated>
+      <workItem from="1579182402262" duration="4565000" />
+      <workItem from="1579253990860" duration="9983000" />
+      <workItem from="1579370179278" duration="595000" />
+      <workItem from="1579595455297" duration="3857000" />
+      <workItem from="1579681208362" duration="8701000" />
+      <workItem from="1579769351920" duration="9265000" />
+      <workItem from="1580128826410" duration="8240000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="303" y="119" key="SettingsEditor" timestamp="1579688599504">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1579688599504" />
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579771534156">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1579771534156" />
+    <state x="429" y="185" width="505" height="400" key="search.everywhere.popup" timestamp="1579693523465">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="429" y="185" width="505" height="400" key="search.everywhere.popup/0.25.1366.743@0.25.1366.743" timestamp="1579693523465" />
+  </component>
+</project>

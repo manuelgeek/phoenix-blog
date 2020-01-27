@@ -1,0 +1,38 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+
+  <div class="row">
+    <div class="form-group">
+        <div class="col-md-12">
+        <%= label f, :title %>
+          <%= text_input f, :title, class: "form-control input-lg" %>
+          <%= error_tag f, :title %>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+        <div class="col-md-12">
+            <%= label f, :body %>
+              <%= textarea f, :body, class: "form-control input-lg" %>
+              <%= error_tag f, :body %>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+        <div class="col-md-12">
+            <label>Photo</label>
+                <%= file_input f, :image, class: "form-control input-lg", required: true, accept: "image/*" %>
+              <%= error_tag f, :image %>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+        <div class="col-md-12">
+            <%= submit "Save", class: "btn btn-primary pull-right push-bottom" %>
+        </div>
+    </div>
+  </div>
+
+<% end %>

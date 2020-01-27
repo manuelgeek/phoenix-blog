@@ -1,0 +1,100 @@
+<div class="post-block post-comments clearfix">
+    <h3><i class="fa fa-comments"></i>Comments (3)</h3>
+
+    <ul class="comments">
+        <li>
+            <div class="comment">
+                <div class="img-thumbnail">
+                    <img class="avatar" alt="" src="/dist/img/avatar-2.jpg">
+                </div>
+                <div class="comment-block">
+                    <div class="comment-arrow"></div>
+                    <span class="comment-by">
+                        <strong>John Doe</strong>
+                        <span class="pull-right">
+                            <span> <a href="#"><i class="fa fa-reply"></i> Reply</a></span>
+                        </span>
+                    </span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.</p>
+                    <span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+                </div>
+            </div>
+
+            <ul class="comments reply">
+                <li>
+                    <div class="comment">
+                        <div class="img-thumbnail">
+                            <img class="avatar" alt="" src="/dist/img/avatar-3.jpg">
+                        </div>
+                        <div class="comment-block">
+                            <div class="comment-arrow"></div>
+                            <span class="comment-by">
+                                <strong>John Doe</strong>
+                                <span class="pull-right">
+                                    <span> <a href="#"><i class="fa fa-reply"></i> Reply</a></span>
+                                </span>
+                            </span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
+                            <span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="comment">
+                        <div class="img-thumbnail">
+                            <img class="avatar" alt="" src="/dist/img/avatar-4.jpg">
+                        </div>
+                        <div class="comment-block">
+                            <div class="comment-arrow"></div>
+                            <span class="comment-by">
+                                <strong>John Doe</strong>
+                                <span class="pull-right">
+                                    <span> <a href="#"><i class="fa fa-reply"></i> Reply</a></span>
+                                </span>
+                            </span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
+                            <span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="comment">
+                <div class="img-thumbnail">
+                    <img class="avatar" alt="" src="/dist/img/avatar.jpg">
+                </div>
+                <div class="comment-block">
+                    <div class="comment-arrow"></div>
+                    <span class="comment-by">
+                        <strong>John Doe</strong>
+                        <span class="pull-right">
+                            <span> <a href="#"><i class="fa fa-reply"></i> Reply</a></span>
+                        </span>
+                    </span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="comment">
+                <div class="img-thumbnail">
+                    <img class="avatar" alt="" src="/dist/img/avatar.jpg">
+                </div>
+                <div class="comment-block">
+                    <div class="comment-arrow"></div>
+                    <span class="comment-by">
+                        <strong>John Doe</strong>
+                        <span class="pull-right">
+                            <span> <a href="#"><i class="fa fa-reply"></i> Reply</a></span>
+                        </span>
+                    </span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <span class="date pull-right">January 12, 2013 at 1:38 pm</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>

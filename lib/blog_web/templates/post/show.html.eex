@@ -1,0 +1,85 @@
+<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: @post.title %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="blog-posts single-post">
+
+                <article class="post post-large blog-single-post">
+                    <div class="post-image">
+                        <div class="owl-carousel" data-plugin-options='{"items":1}'>
+                            <div>
+                                <div class="img-thumbnail">
+                                    <img class="img-responsive" src="<%= Routes.static_path(@conn, @post.image) %>" alt="">
+                                </div>
+                            </div>
+                           <%# <div>
+                                <div class="img-thumbnail">
+                                    <img class="img-responsive" src="/dist/img/blog/blog-image-2.jpg" alt="">
+                                </div>
+                            </div> %>
+                        </div>
+                    </div>
+
+                    <div class="post-date">
+                        <span class="day"><%= date(@post.inserted_at) %></span>
+                        <span class="month"><%= Timex.from_now(@post.inserted_at) %></span>
+                    </div>
+
+                    <div class="post-content">
+
+                        <h2><a href="<%= Routes.post_path(@conn, :show, @post) %>"><%= @post.title %></a></h2>
+
+                        <div class="post-meta">
+                            <span><i class="fa fa-user"></i> By <a href="#">John Doe</a> </span>
+                            <span><i class="fa fa-tag"></i> <a href="#">Duis</a>, <a href="#">News</a> </span>
+                            <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
+                        </div>
+
+                        <p>
+                            <%= @post.body %>
+                        </p>
+
+
+                        <div class="post-block post-share">
+                            <h3><i class="fa fa-share"></i>Share this post</h3>
+
+                            <!-- AddThis Button BEGIN -->
+                            <div class="addthis_toolbox addthis_default_style ">
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                <a class="addthis_button_tweet"></a>
+                                <a class="addthis_button_pinterest_pinit"></a>
+                                <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+                            <!-- AddThis Button END -->
+
+                        </div>
+
+                        <div class="post-block post-author clearfix">
+                            <h3><i class="fa fa-user"></i>Author</h3>
+                            <div class="img-thumbnail">
+                                <a href="blog-post.html">
+                                    <img src="/dist/img/avatar.jpg" alt="">
+                                </a>
+                            </div>
+                            <p><strong class="name"><a href="#">John Doe</a></strong></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui. </p>
+                        </div>
+
+                        <%= render BlogWeb.PartialsView, "post/_comments.html", assigns %>
+
+                        <%= render BlogWeb.PartialsView, "post/_create_comment.html", assigns %>
+
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <%= render BlogWeb.PartialsView, "post/_aside.html", assigns %>
+    </div>
+</div>
+
+
+<span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
+<span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>

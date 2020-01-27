@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<%= render "partials/_head.html", assigns %>
+
+	</head>
+	<body>
+
+		<div class="body">
+            <%= render "partials/_nav.html", assigns %>
+
+			<div role="main" class="main">
+
+                <%= render @view_module, @view_template, assigns %>
+
+			</div>
+
+            <%= render "partials/_footer.html", assigns %>
+		</div>
+
+        <%= render "partials/_scripts.html", assigns %>
+
+	</body>
+</html>
+
