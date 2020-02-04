@@ -17,8 +17,10 @@ defmodule Blog.Posts do
       [%Post{}, ...]
 
   """
-  def list_posts do
-    Repo.all(Post)
+  def list_posts(params) do
+    Post
+    |> Repo.paginate(params)
+#    Repo.all(Post)
   end
 
   @doc """
