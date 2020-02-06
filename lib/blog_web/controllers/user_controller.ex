@@ -1,45 +1,54 @@
 defmodule BlogWeb.UserController do
   use BlogWeb, :controller
 
-  alias Blog.Accounts
-  alias Blog.Accounts.User
+  import BlogWeb.Authorize
 
-  def index(conn, _params) do
+  alias Phauxth.Log
+  alias Blog.{Accounts, Accounts.User}
+  alias Blog.{Sessions, Sessions.Session}
+
+  # the following plugs are defined in the controllers/authorize.ex file
+  plug :user_check when action in [:index, :show]
+  plug :id_check when action in [:edit, :update, :delete]
+
+  def index(conn, _) do
     users = Accounts.list_users()
     render(conn, "index.html", users: users)
   end
 
-  def new(conn, _params) do
+  def new(conn, _) do
     changeset = Accounts.change_user(%User{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "auth/register.html", changeset: changeset)
   end
 
   def create(conn, %{"user" => user_params}) do
     case Accounts.create_user(user_params) do
       {:ok, user} ->
+        Log.info(%Log{user: user.id, message: "user created"})
+
         conn
+        |> add_session(user, user_params)
         |> put_flash(:info, "User created successfully.")
-        |> redirect(to: Routes.user_path(conn, :show, user))
+#        |> redirect(to: Routes.session_path(conn, :new))
+        |> redirect(to: Routes.user_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        IO.inspect changeset
+        render(conn, "auth/register.html", changeset: changeset)
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    user = Accounts.get_user!(id)
+  def show(%Plug.Conn{assigns: %{current_user: user}} = conn, %{"id" => id}) do
+    user = if id == to_string(user.id), do: user, else: Accounts.get_user!(id)
     render(conn, "show.html", user: user)
   end
 
-  def edit(conn, %{"id" => id}) do
-    user = Accounts.get_user!(id)
+  def edit(%Plug.Conn{assigns: %{current_user: user}} = conn, _) do
     changeset = Accounts.change_user(user)
     render(conn, "edit.html", user: user, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "user" => user_params}) do
-    user = Accounts.get_user!(id)
-
+  def update(%Plug.Conn{assigns: %{current_user: user}} = conn, %{"user" => user_params}) do
     case Accounts.update_user(user, user_params) do
       {:ok, user} ->
         conn
@@ -51,12 +60,28 @@ defmodule BlogWeb.UserController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    user = Accounts.get_user!(id)
+  def delete(%Plug.Conn{assigns: %{current_user: user}} = conn, _) do
     {:ok, _user} = Accounts.delete_user(user)
 
     conn
+    |> delete_session(:phauxth_session_id)
     |> put_flash(:info, "User deleted successfully.")
-    |> redirect(to: Routes.user_path(conn, :index))
+    |> redirect(to: Routes.session_path(conn, :new))
   end
+
+  defp add_session(conn, user, params) do
+    {:ok, %{id: session_id}} = Sessions.create_session(%{user_id: user.id})
+
+    conn
+    |> delete_session(:request_path)
+    |> put_session(:phauxth_session_id, session_id)
+    |> configure_session(renew: true)
+    |> add_remember_me(user.id, params)
+  end
+
+  defp add_remember_me(conn, user_id, %{"remember_me" => "true"}) do
+    Remember.add_rem_cookie(conn, user_id)
+  end
+
+  defp add_remember_me(conn, _, _), do: conn
 end

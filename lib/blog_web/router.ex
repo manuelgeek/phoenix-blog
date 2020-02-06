@@ -7,6 +7,8 @@ defmodule BlogWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Phauxth.Authenticate
+    plug Phauxth.Remember, create_session_func: &BlogWeb.Auth.Utils.create_session/1
   end
 
   pipeline :api do
@@ -16,8 +18,16 @@ defmodule BlogWeb.Router do
   scope "/", BlogWeb do
     pipe_through :browser
 
+    get "/register", UserController, :new
+    post "/register", UserController, :create
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
+    post "/logout", SessionController, :delete
+
     get "/", PostController, :index
     resources "/posts", PostController
+    resources "/users", UserController, except: [:new, :create]
+#    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.

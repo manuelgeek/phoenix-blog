@@ -2,16 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scrivener.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scrivener_ecto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/argon2_elixir.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/bcrypt_elixir.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/comeonin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/elixir_make.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/phauxth.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/repo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/repo.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/accounts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/accounts.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/accounts/user.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/accounts/user.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/posts/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts/post.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/page_controller.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/user_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_head.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_head.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_scripts.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_scripts.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/page/index.html.eex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/edit.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/edit.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/new.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/new.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/error_helpers.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/error_helpers.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/layout_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/layout_view.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/page_view.ex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200116154018_create_users.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200116161304_create_posts.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20200116161304_create_posts.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/blog_web/controllers/user_controller_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/blog_web/controllers/user_controller_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Elixir Module" />
         <option value="Elixir Template" />
+        <option value="Elixir Module" />
       </list>
     </option>
   </component>
@@ -30,7 +52,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WTnG9fHWlgJrGoA5KcR5tV65FJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -80,7 +104,8 @@
       <workItem from="1579681208362" duration="8701000" />
       <workItem from="1579769351920" duration="9265000" />
       <workItem from="1580128826410" duration="8379000" />
-      <workItem from="1580818222910" duration="1923000" />
+      <workItem from="1580818222910" duration="2184000" />
+      <workItem from="1580986154539" duration="16294000" />
     </task>
     <servers />
   </component>
@@ -92,10 +117,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1579688599504" />
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579771534156">
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580999116345">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1579771534156" />
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1580999116345" />
     <state x="429" y="185" width="505" height="400" key="search.everywhere.popup" timestamp="1579693523465">
       <screen x="0" y="25" width="1366" height="743" />
     </state>

@@ -1,11 +1,13 @@
 <meta charset="utf-8">
-		<title>Blog Large Image | Porto - Responsive HTML5 Template 3.7.0</title>
+		<title>Blog Large Image </title>
 		<meta name="keywords" content="HTML5 Template" />
 		<meta name="description" content="Porto - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="shortcut icon" href="/dist/img/logo.png" type="image/png">
 
 		<!-- Web Fonts  -->
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">

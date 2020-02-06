@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="phauxth" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/phauxth/ebin" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/phauxth/lib" />
+    </SOURCES>
+  </library>
+</component>

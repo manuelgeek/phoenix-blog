@@ -17,6 +17,12 @@ config :blog, BlogWeb.Endpoint,
   render_errors: [view: BlogWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Blog.PubSub, adapter: Phoenix.PubSub.PG2]
 
+# Phauxth authentication configuration
+config :phauxth,
+  user_context: Blog.Accounts,
+  crypto_module: Argon2,
+  token_module: BlogWeb.Auth.Token
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

@@ -52,13 +52,13 @@
               }).show();
           <% end %>
 
-          <%= if get_flash(@conn, :danger) do %>
+          <%= if get_flash(@conn, :error) do %>
              $('.top-right').notify({
-                message: "<%= get_flash(@conn, :danger) %>" ,
+                message: "<%= get_flash(@conn, :error) %>" ,
                 title: 'Danger',
                 type: 'danger',
               }).show();
-          <% end %>
+          <% end %>danger
 
           <%= if assigns[:changeset] && @changeset.action do %>
              $('.top-right').notify({
