@@ -9,14 +9,10 @@
                        <div class="owl-carousel" data-plugin-options='{"items":1}'>
                            <div>
                                <div class="img-thumbnail">
-                                   <img class="img-responsive" src="/dist/img/blog/blog-image-3.jpg" alt="">
+                                   <img class="img-responsive" src="<%= Routes.static_path(@conn, post.image) %>" alt="post image">
                                </div>
                            </div>
-                           <div>
-                               <div class="img-thumbnail">
-                                   <img class="img-responsive" src="/dist/img/blog/blog-image-2.jpg" alt="">
-                               </div>
-                           </div>
+
                        </div>
                    </div>
 
@@ -27,14 +23,14 @@
 
                    <div class="post-content">
 
-                       <h2><a href="<%= Routes.post_path(@conn, :show, post) %>"><%= post.title %></a></h2>
-                       <p><%= post.body %></p>
+                       <h2><a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a></h2>
+                       <p><%= shorten_body post.body %></p>
 
                        <div class="post-meta">
-                           <span><i class="fa fa-user"></i> By <a href="#">John Doe</a> </span>
+                           <span><i class="fa fa-user"></i> By <a href="#"><%= post.user.name %></a> </span>
                            <span><i class="fa fa-tag"></i> <a href="#">Duis</a>, <a href="#">News</a> </span>
                            <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
-                           <a href="<%= Routes.post_path(@conn, :show, post) %>" class="btn btn-xs btn-primary pull-right">Read more...</a>
+                           <a href="<%= Routes.post_path(@conn, :show, post.slug) %>" class="btn btn-xs btn-primary pull-right">Read more...</a>
                        </div>
 
                    </div>
@@ -53,4 +49,3 @@
    </div>
 </div>
 
-<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>

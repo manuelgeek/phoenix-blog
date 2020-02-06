@@ -30,7 +30,7 @@ defmodule BlogWeb.UserController do
         |> add_session(user, user_params)
         |> put_flash(:info, "User created successfully.")
 #        |> redirect(to: Routes.session_path(conn, :new))
-        |> redirect(to: Routes.user_path(conn, :index))
+        |> redirect(to: Routes.post_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         IO.inspect changeset

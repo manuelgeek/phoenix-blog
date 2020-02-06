@@ -35,7 +35,7 @@
             </ul>
             <nav class="nav-main mega-menu">
                 <ul class="nav nav-pills nav-main" id="mainMenu">
-                    <li class="dropdown">
+                    <li >
                         <a href="<%= Routes.post_path(@conn, :index) %>">Home</a>
                     </li>
                     <li>
@@ -52,6 +52,28 @@
                             <li><a href="#">About Me</a></li>
                         </ul>
                     </li>
+                <%= if @current_user !== nil do %>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#">
+                            <%= @current_user.name %>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="<%= Routes.post_path(@conn, :new) %>">New Post</a></li>
+                            <li><a href="#">My Posts</a></li>
+                            <li> <a href="/logout" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Logout</a></li>
+                            <%= form_for @conn, Routes.session_path(@conn, :delete), [as: :session , id: "logout-form"], fn f -> %>
+                              <input type="hidden" name="id" value="<%= @conn.private[:plug_session]["phauxth_session_id"] %>">
+                              <% end %>
+                        </ul>
+                    </li>
+                <% else %>
+                  <li>
+                      <a href="/login">Login</a>
+                  </li>
+                <% end %>
                 </ul>
             </nav>
         </div>

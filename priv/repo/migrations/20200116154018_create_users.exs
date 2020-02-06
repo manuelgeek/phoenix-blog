@@ -11,6 +11,6 @@ defmodule Blog.Repo.Migrations.CreateUsers do
       timestamps()
     end
 
-    create unique_index :users, [:email, :username]
+    create unique_index(:users, [:email, :username])
   end
 end

@@ -9,6 +9,8 @@ defmodule Blog.Accounts.User do
   @type t :: %__MODULE__{
     id: integer,
     email: String.t(),
+    name: String.t(),
+    username: String.t(),
     password_hash: String.t(),
     sessions: [Session.t()] | %Ecto.Association.NotLoaded{},
     inserted_at: DateTime.t(),
@@ -42,6 +44,7 @@ defmodule Blog.Accounts.User do
     |> unique_email
     |> validate_password(:password)
     |> validate_confirmation(:password)
+    |> unique_constraint(:username)
     |> put_pass_hash
   end
 

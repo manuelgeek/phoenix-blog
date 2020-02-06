@@ -28,6 +28,7 @@ defmodule BlogWeb.Router do
     resources "/posts", PostController
     resources "/users", UserController, except: [:new, :create]
 #    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/categories", CategoryController
   end
 
   # Other scopes may use custom stacks.

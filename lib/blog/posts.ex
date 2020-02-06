@@ -19,8 +19,10 @@ defmodule Blog.Posts do
   """
   def list_posts(params) do
     Post
+    |> order_by(desc: :inserted_at)
+    |> preload(:user)
     |> Repo.paginate(params)
-#    Repo.all(Post)
+#
   end
 
   @doc """
@@ -38,6 +40,10 @@ defmodule Blog.Posts do
 
   """
   def get_post!(id), do: Repo.get!(Post, id)
+
+  def get_by_slug!(slug) do
+    Repo.get_by!(Post, slug: slug) |> Repo.preload(:user)
+  end
 
   @doc """
   Creates a post.
