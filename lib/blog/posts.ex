@@ -42,7 +42,7 @@ defmodule Blog.Posts do
   def get_post!(id), do: Repo.get!(Post, id)
 
   def get_by_slug!(slug) do
-    Repo.get_by!(Post, slug: slug) |> Repo.preload(:user)
+    Repo.get_by!(Post, slug: slug) |> Repo.preload([:user, :category])
   end
 
   @doc """
