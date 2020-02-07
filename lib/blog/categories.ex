@@ -1,4 +1,4 @@
-defmodule Blog.Categories do
+gadefmodule Blog.Categories do
   @moduledoc """
   The Categories context.
   """
