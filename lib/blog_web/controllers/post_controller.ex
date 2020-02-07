@@ -24,12 +24,9 @@ defmodule BlogWeb.PostController do
 
   def create(conn, %{"post" => post_params}) do
     slug = slugified_title(post_params["title"])
-#    if(post_params["image"] != nil) do
-      image = upload_image(post_params["image"], slug)
-#      IO.inspect image
-      post_params = Map.put(post_params, "image", image)
-#    end
-    post_params = Map.merge(post_params, %{"status" => true, "slug" => slug, "user_id" => conn.assigns.current_user.id, "category_id" => post_params["category"]})
+#      image = upload_image(post_params["image"], slug)
+#      post_params = Map.put(post_params, "image", image)
+    post_params = Map.merge(post_params, %{"status" => true, "slug" => slug, "user_id" => conn.assigns.current_user.id})
     
     case Posts.create_post(post_params) do
       {:ok, post} ->
@@ -83,14 +80,5 @@ defmodule BlogWeb.PostController do
     |> String.downcase
     |> String.replace(~r/[^a-z0-9\s-]/, "")
     |> String.replace(~r/(\s|-)+/, "-")
-  end
-
-  defp upload_image(image, slug) do
-    File.mkdir_p!(Path.dirname("priv/static/media/"))
-    extension = Path.extname(image.filename)
-    img_name = "/media/#{slug}-post#{extension}"
-    img_path = "priv/static#{img_name}"
-    File.cp(image.path, img_path)
-    img_name
   end
 end

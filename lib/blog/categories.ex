@@ -5,6 +5,7 @@ defmodule Blog.Categories do
 
   import Ecto.Query, warn: false
   alias Blog.Repo
+  import Ecto.Query, only: [from: 2]
 
   alias Blog.Categories.Category
 
@@ -22,7 +23,9 @@ defmodule Blog.Categories do
   end
   
   def list_active_categories do
-    Repo.all(Category)
+    query = from u in Category,
+                 where: u.status == true
+    Repo.all(query)
   end
 
   @doc """

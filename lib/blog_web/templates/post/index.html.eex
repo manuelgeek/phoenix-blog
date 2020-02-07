@@ -41,11 +41,11 @@
                <ul class="pagination pagination-lg pull-right">
                 <%= pagination_links @page %>
                </ul>
-          <%= else %>
+          <% else %>
               <article class="post post-large text-center">
                   <h3>No Posts yet</h3>
               </article>
-          <%= end %>
+          <% end %>
            </div>
        </div>
 

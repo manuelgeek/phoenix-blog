@@ -4,19 +4,10 @@
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/categories.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/categories.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/posts/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts/post.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/category_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/category_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/category/edit.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/category/edit.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/category/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/category/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/category/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/category/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/category/new.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/category/new.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/form.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/category_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/category_view.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200116161304_create_posts.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20200116161304_create_posts.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200206192808_create_categories.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20200116161300_create_categories.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +80,7 @@
       <workItem from="1580128826410" duration="8379000" />
       <workItem from="1580818222910" duration="2184000" />
       <workItem from="1580986154539" duration="32056000" />
-      <workItem from="1581062370786" duration="4552000" />
+      <workItem from="1581062370786" duration="23021000" />
     </task>
     <servers />
   </component>
@@ -101,10 +92,14 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1581014272581" />
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581064727725">
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581078879037">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581064727725" />
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581078879037" />
+    <state x="430" y="179" key="run.anything.popup" timestamp="1581087531327">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="430" y="179" key="run.anything.popup/0.25.1366.743@0.25.1366.743" timestamp="1581087531327" />
     <state x="429" y="185" width="505" height="400" key="search.everywhere.popup" timestamp="1581064309171">
       <screen x="0" y="25" width="1366" height="743" />
     </state>

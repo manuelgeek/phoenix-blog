@@ -4,10 +4,11 @@ defmodule Blog.Posts.Post do
 
   alias Blog.Accounts.User
   alias Blog.Categories.Category
-
+   
   schema "posts" do
     field :body, :string
     field :image, :string
+    field :img_file, :any,  virtual: true
     field :slug, :string
     field :status, :boolean, default: true
     field :title, :string
@@ -21,9 +22,29 @@ defmodule Blog.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :slug, :body, :status, :image, :user_id, :category_id,:category])
-#    |> cast_assoc(attrs, :category)
-    |> validate_required([:title, :slug, :body, :status, :image, :category])
+    IO.inspect post
+    |> cast(attrs, [:title, :slug, :body, :status, :img_file, :user_id, :category_id])
+#    |> cast_assoc(:category)
+    |> validate_required([:title, :slug, :body, :img_file, :status, :category_id])
     |> unique_constraint(:slug)
+    |> add_image
   end
+  
+  defp add_image(%Ecto.Changeset{valid?: true, changes: %{img_file: image, slug: slug}} = changeset) do
+    image = upload_image(image, slug)
+    changeset = put_change(changeset, :image, image)
+    IO.inspect changeset
+  end
+
+  defp add_image(changeset), do: changeset
+  
+  defp upload_image(image, slug) do
+    File.mkdir_p!(Path.dirname("priv/static/media/"))
+    extension = Path.extname(image.filename)
+    img_name = "/media/#{slug}-post#{extension}"
+    img_path = "priv/static#{img_name}"
+    File.cp(image.path, img_path)
+    img_name
+  end
+  
 end
