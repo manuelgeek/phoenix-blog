@@ -1,4 +1,4 @@
-gadefmodule Blog.Categories do
+defmodule Blog.Categories do
   @moduledoc """
   The Categories context.
   """
@@ -18,6 +18,10 @@ gadefmodule Blog.Categories do
 
   """
   def list_categories do
+    Repo.all(Category)
+  end
+  
+  def list_active_categories do
     Repo.all(Category)
   end
 

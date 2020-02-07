@@ -3,7 +3,8 @@
    <div class="row">
        <div class="col-md-9">
            <div class="blog-posts">
-           <%= for post <- @posts do %>
+           <%= if @page.total_entries > 0 do %>
+               <%= for post <- @posts do %>
                <article class="post post-large">
                    <div class="post-image">
                        <div class="owl-carousel" data-plugin-options='{"items":1}'>
@@ -35,13 +36,16 @@
 
                    </div>
                </article>
-           <% end %>
+               <% end %>
 
                <ul class="pagination pagination-lg pull-right">
                 <%= pagination_links @page %>
-
                </ul>
-
+          <%= else %>
+              <article class="post post-large text-center">
+                  <h3>No Posts yet</h3>
+              </article>
+          <%= end %>
            </div>
        </div>
 

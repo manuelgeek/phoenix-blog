@@ -21,6 +21,20 @@
   <div class="row">
     <div class="form-group">
         <div class="col-md-12">
+            <label for="cat">Status</label>
+                <select name="post[category]" class="form-control input-lg" id='cat'>
+                  <option value="">Select Category</option>
+                  <%= for category <- @categories do %>
+                    <option value="<%= category.id %>"><%= category.name %></option>
+                  <% end %>
+                </select>
+                <%= error_tag f, :category %>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+        <div class="col-md-12">
             <label>Photo</label>
                 <%= file_input f, :image, class: "form-control input-lg", required: true, accept: "image/*" %>
               <%= error_tag f, :image %>

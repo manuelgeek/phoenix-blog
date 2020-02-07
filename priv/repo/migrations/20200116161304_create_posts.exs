@@ -9,6 +9,7 @@ defmodule Blog.Repo.Migrations.CreatePosts do
       add :status, :boolean, default: true, null: false
       add :image, :string
       add :user_id, references(:users, on_delete: :delete_all), null: false
+      add :category_id, references(:categories, on_delete: :delete_all), null: false
 
       timestamps()
     end

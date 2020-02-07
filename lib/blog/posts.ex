@@ -20,7 +20,7 @@ defmodule Blog.Posts do
   def list_posts(params) do
     Post
     |> order_by(desc: :inserted_at)
-    |> preload(:user)
+    |> preload([:user, :category])
     |> Repo.paginate(params)
 #
   end

@@ -6,8 +6,7 @@ defmodule Blog.Repo.Migrations.CreateCategories do
       add :name, :string
       add :slug, :string
       add :status, :boolean, default: false, null: false
-
-      add :category_id, references(:categories, on_delete: :delete_all), null: false
+      
       timestamps()
     end
 

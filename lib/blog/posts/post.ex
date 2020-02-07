@@ -21,8 +21,9 @@ defmodule Blog.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :slug, :body, :status, :image, :user_id])
-    |> validate_required([:title, :slug, :body, :status, :image])
+    |> cast(attrs, [:title, :slug, :body, :status, :image, :user_id, :category_id,:category])
+#    |> cast_assoc(attrs, :category)
+    |> validate_required([:title, :slug, :body, :status, :image, :category])
     |> unique_constraint(:slug)
   end
 end

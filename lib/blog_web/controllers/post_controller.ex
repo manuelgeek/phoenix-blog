@@ -5,20 +5,21 @@ defmodule BlogWeb.PostController do
 
   alias Blog.Posts
   alias Blog.Posts.Post
+  alias Blog.Categories
 
   plug :user_check when action in [:new, :create]
   plug :id_check when action in [:edit, :update, :delete]
 
   def index(conn, params) do
     page = Posts.list_posts(params)
-    IO.inspect page.entries
+#    IO.inspect page
     render(conn, "index.html", posts: page.entries, page: page)
   end
 
   def new(conn, _params) do
     changeset = Posts.change_post(%Post{})
-    assign(conn, :button, "Welcome Forward")
-    render(conn, "new.html", changeset: changeset)
+    categories = Categories.list_active_categories()
+    render(conn, "new.html", changeset: changeset, categories: categories)
   end
 
   def create(conn, %{"post" => post_params}) do
@@ -28,8 +29,8 @@ defmodule BlogWeb.PostController do
 #      IO.inspect image
       post_params = Map.put(post_params, "image", image)
 #    end
-    post_params = Map.merge(post_params, %{"status" => true, "slug" => slug, "user_id" => conn.assigns.current_user.id})
-#    IO.inspect post_params
+    post_params = Map.merge(post_params, %{"status" => true, "slug" => slug, "user_id" => conn.assigns.current_user.id, "category_id" => post_params["category"]})
+    
     case Posts.create_post(post_params) do
       {:ok, post} ->
         conn
@@ -37,8 +38,8 @@ defmodule BlogWeb.PostController do
         |> redirect(to: Routes.post_path(conn, :show, post.slug))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-      IO.inspect changeset
-        render(conn, "new.html", changeset: changeset)
+        categories = Categories.list_active_categories()
+        render(conn, "new.html", changeset: changeset, categories: categories)
     end
   end
 

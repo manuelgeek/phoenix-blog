@@ -1,8 +1,10 @@
 defmodule BlogWeb.CategoryController do
   use BlogWeb, :controller
 
+  import BlogWeb.Authorize
   alias Blog.Categories
   alias Blog.Categories.Category
+  plug :user_check
 
   def index(conn, _params) do
     categories = Categories.list_categories()
@@ -15,11 +17,13 @@ defmodule BlogWeb.CategoryController do
   end
 
   def create(conn, %{"category" => category_params}) do
+    slug = slugified_title(category_params["name"])
+    category_params = Map.put(category_params, "slug", slug)
     case Categories.create_category(category_params) do
       {:ok, category} ->
         conn
         |> put_flash(:info, "Category created successfully.")
-        |> redirect(to: Routes.category_path(conn, :show, category))
+        |> redirect(to: Routes.category_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -58,5 +62,12 @@ defmodule BlogWeb.CategoryController do
     conn
     |> put_flash(:info, "Category deleted successfully.")
     |> redirect(to: Routes.category_path(conn, :index))
+  end
+
+  defp slugified_title(title) do
+    title
+    |> String.downcase
+    |> String.replace(~r/[^a-z0-9\s-]/, "")
+    |> String.replace(~r/(\s|-)+/, "-")
   end
 end
