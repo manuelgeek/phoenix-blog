@@ -5,7 +5,8 @@ defmodule BlogWeb.UserController do
 
   alias Phauxth.Log
   alias Blog.{Accounts, Accounts.User}
-  alias Blog.{Sessions, Sessions.Session}
+  alias Blog.Sessions
+  alias Phauxth.Remember
 
   # the following plugs are defined in the controllers/authorize.ex file
   plug :user_check when action in [:index, :show]

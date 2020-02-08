@@ -4,17 +4,20 @@ defmodule Blog.Posts.Post do
 
   alias Blog.Accounts.User
   alias Blog.Categories.Category
+  alias Blog.Posts.Tag
    
   schema "posts" do
     field :body, :string
     field :image, :string
     field :img_file, :any,  virtual: true
+    field :tagged, :string,  virtual: true
     field :slug, :string
     field :status, :boolean, default: true
     field :title, :string
 
     belongs_to :user, User
     belongs_to :category, Category
+    many_to_many :tags, Tag, join_through: "posts_tags"
 
     timestamps()
   end
@@ -23,11 +26,11 @@ defmodule Blog.Posts.Post do
   def changeset(post, attrs) do
     post
     IO.inspect post
-    |> cast(attrs, [:title, :slug, :body, :status, :img_file, :user_id, :category_id])
-#    |> cast_assoc(:category)
-    |> validate_required([:title, :slug, :body, :img_file, :status, :category_id])
+    |> cast(attrs, [:title, :slug, :body, :status, :img_file, :tagged, :user_id, :category_id])
+#    |> cast_assoc(:tags, with: &BlogWeb.Posts.Tag.changeset/2)
+    |> validate_required([:title, :slug, :body, :img_file, :status, :tagged, :category_id])
     |> unique_constraint(:slug)
-    |> add_image
+#    |> add_image
   end
   
   defp add_image(%Ecto.Changeset{valid?: true, changes: %{img_file: image, slug: slug}} = changeset) do

@@ -109,4 +109,5 @@ defmodule Blog.Posts do
   def change_post(%Post{} = post) do
     Post.changeset(post, %{})
   end
+
 end
