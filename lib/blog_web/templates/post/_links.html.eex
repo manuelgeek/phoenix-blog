@@ -1,0 +1,8 @@
+<span><i class="fa fa-user"></i> By <a href="#"><%= @post.user.name %></a> </span>
+<span><i class="fa fa-list"></i> <a href="#"><%= @post.category.name %></a> </span>
+<span><i class="fa fa-tag"></i>
+<%= for tag <- @post.tags do %>
+ <a href="<%= Routes.post_path(@conn, :tag, tag.name) %>"><%= tag.name %></a>,
+<% end %>
+</span>
+<span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>

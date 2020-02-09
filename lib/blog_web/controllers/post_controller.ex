@@ -17,6 +17,12 @@ defmodule BlogWeb.PostController do
     IO.inspect page
     render(conn, "index.html", posts: page.entries, page: page)
   end
+  
+  def tag(conn, params) do
+    tag = Tags.get_by_name!(params["tag"])
+    page = Posts.list_tag_posts(params,tag.name)
+    render(conn, "index.html", posts: page.entries, page: page, tag: tag)
+  end
 
   def new(conn, _params) do
     changeset = Posts.change_post(%Post{})

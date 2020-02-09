@@ -1,42 +1,10 @@
-<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: 'Latest Posts' %>
+<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: if assigns[:tag], do: "Tag: " <> @tag.name, else: "Latest Posts"  %>
 <div class="container">
    <div class="row">
        <div class="col-md-9">
            <div class="blog-posts">
            <%= if @page.total_entries > 0 do %>
-               <%= for post <- @posts do %>
-               <article class="post post-large">
-                   <div class="post-image">
-                       <div class="owl-carousel" data-plugin-options='{"items":1}'>
-                           <div>
-                               <div class="img-thumbnail">
-                                   <img class="img-responsive" src="<%= Routes.static_path(@conn, post.image) %>" alt="post image">
-                               </div>
-                           </div>
-
-                       </div>
-                   </div>
-
-                   <div class="post-date">
-                       <span class="day">10</span>
-                       <span class="month">Jan</span>
-                   </div>
-
-                   <div class="post-content">
-
-                       <h2><a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a></h2>
-                       <p><%= shorten_body post.body %></p>
-
-                       <div class="post-meta">
-                           <span><i class="fa fa-user"></i> By <a href="#"><%= post.user.name %></a> </span>
-                           <span><i class="fa fa-tag"></i> <a href="#">Duis</a>, <a href="#">News</a> </span>
-                           <span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
-                           <a href="<%= Routes.post_path(@conn, :show, post.slug) %>" class="btn btn-xs btn-primary pull-right">Read more...</a>
-                       </div>
-
-                   </div>
-               </article>
-               <% end %>
+                  <%= render_many @posts, BlogWeb.PostView, "_article.html", conn: @conn %>
 
                <ul class="pagination pagination-lg pull-right">
                 <%= pagination_links @page %>

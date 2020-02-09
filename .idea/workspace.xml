@@ -4,11 +4,11 @@
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/posts/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts/post.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/repo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/repo.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/tags.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/tags.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_scripts.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_scripts.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/app.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Elixir Template" />
         <option value="Elixir Module" />
         <option value="Elixir Application" />
+        <option value="Elixir Template" />
       </list>
     </option>
   </component>
@@ -86,7 +86,7 @@
       <workItem from="1581062370786" duration="24447000" />
       <workItem from="1581160573622" duration="13186000" />
       <workItem from="1581245756053" duration="1913000" />
-      <workItem from="1581247849352" duration="9224000" />
+      <workItem from="1581247849352" duration="18065000" />
     </task>
     <servers />
   </component>

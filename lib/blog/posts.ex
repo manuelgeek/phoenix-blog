@@ -11,9 +11,21 @@ defmodule Blog.Posts do
   def list_posts(params) do
     Post
     |> order_by(desc: :inserted_at)
+#    |> join(:left, [p], c in assoc(p, :tags))
+#    |> where([p, c], c.name == "edu")
+#    |> preload([p, c], [:user, :category, :tags])
     |> preload([:user, :category, :tags])
     |> Repo.paginate(params)
 #
+  end
+  
+  def list_tag_posts(params, tag) do
+    Post
+    |> order_by(desc: :inserted_at)
+    |> join(:left, [p], c in assoc(p, :tags))
+    |> where([p, c], c.name == ^tag)
+    |> preload([p, c], [:user, :category, :tags])
+    |> Repo.paginate(params)
   end
   
   def get_post!(id), do: Repo.get!(Post, id)

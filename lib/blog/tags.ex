@@ -11,9 +11,11 @@ defmodule Blog.Tags do
   def list_tags do
     Repo.all(Tag)
   end
-  
-  def get_tag!(id), do: Repo.get!(Tag, id)
 
+  def get_by_name!(name) do
+    Repo.get_by!(Tag, name: name)
+  end
+  
   def get_by_name(name) do
     Repo.fetch_by(Tag, name: name)
   end
@@ -49,20 +51,6 @@ defmodule Blog.Tags do
     %Tag{}
     |> Tag.changeset(attrs)
     |> Repo.insert()
-  end
-  
-  def update_tag(%Tag{} = tag, attrs) do
-    tag
-    |> Tag.changeset(attrs)
-    |> Repo.update()
-  end
-  
-  def delete_tag(%Tag{} = tag) do
-    Repo.delete(tag)
-  end
-  
-  def change_tag(%Tag{} = tag) do
-    Tag.changeset(tag, %{})
   end
   
   defp string_to_list(string) do

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
 		<!-- Basic -->
 		<%= render "partials/_head.html", assigns %>
 

@@ -25,6 +25,7 @@ defmodule BlogWeb.Router do
     post "/logout", SessionController, :delete
 
     get "/", PostController, :index
+    get "/tags/:tag", PostController, :tag
     resources "/posts", PostController
     resources "/users", UserController, except: [:new, :create]
 #    resources "/sessions", SessionController, only: [:new, :create, :delete]
