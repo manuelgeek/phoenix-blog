@@ -30,7 +30,7 @@ defmodule Blog.Posts.Post do
 #    |> cast_assoc(:tags, with: &BlogWeb.Posts.Tag.changeset/2)
     |> validate_required([:title, :slug, :body, :img_file, :status, :tagged, :category_id])
     |> unique_constraint(:slug)
-#    |> add_image
+    |> add_image
   end
   
   defp add_image(%Ecto.Changeset{valid?: true, changes: %{img_file: image, slug: slug}} = changeset) do

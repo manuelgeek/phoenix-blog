@@ -1,7 +1,7 @@
 <!-- Vendor -->
 <script src="<%= Routes.static_path(@conn, "/dist/vendor/jquery/jquery.js") %>"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
   <script src="/dist/js/tagInput.js"></script>
   <link rel="stylesheet" href="/dist/css/tagInput.css">
   <script>

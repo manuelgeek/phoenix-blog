@@ -4,15 +4,17 @@ defmodule BlogWeb.PostController do
   import BlogWeb.Authorize
 
   alias Blog.Posts
+  alias Blog.Tags
   alias Blog.Posts.Post
   alias Blog.Categories
+  alias Blog.Helpers.Helper
 
   plug :user_check when action in [:new, :create]
   plug :id_check when action in [:edit, :update, :delete]
 
   def index(conn, params) do
     page = Posts.list_posts(params)
-#    IO.inspect page
+    IO.inspect page
     render(conn, "index.html", posts: page.entries, page: page)
   end
 
@@ -23,13 +25,12 @@ defmodule BlogWeb.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
-    slug = slugified_title(post_params["title"])
-#      image = upload_image(post_params["image"], slug)
-#      post_params = Map.put(post_params, "image", image)
+    slug = Helper.slugified_title(post_params["title"])
     post_params = Map.merge(post_params, %{"status" => true, "slug" => slug, "user_id" => conn.assigns.current_user.id})
     
     case Posts.create_post(post_params) do
       {:ok, post} ->
+        Tags.associate_tags(post_params["tagged"], post)
         conn
         |> put_flash(:success, "Post created successfully.")
         |> redirect(to: Routes.post_path(conn, :show, post.slug))
@@ -42,7 +43,7 @@ defmodule BlogWeb.PostController do
 
   def show(conn, %{"id" => id}) do
     post = Posts.get_by_slug!(id)
-#    post = Posts.get_post!(id)
+    IO.inspect post
     render(conn, "show.html", post: post)
   end
 
@@ -74,11 +75,5 @@ defmodule BlogWeb.PostController do
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: Routes.post_path(conn, :index))
   end
-
-  defp slugified_title(title) do
-    title
-    |> String.downcase
-    |> String.replace(~r/[^a-z0-9\s-]/, "")
-    |> String.replace(~r/(\s|-)+/, "-")
-  end
+  
 end

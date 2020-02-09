@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/posts/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts/post.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/category_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/category_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/user_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/repo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/repo.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/tags.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/tags.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_scripts.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_scripts.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/blog/posts_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/blog/posts_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
       <list>
         <option value="Elixir Template" />
         <option value="Elixir Module" />
+        <option value="Elixir Application" />
       </list>
     </option>
   </component>
@@ -50,7 +50,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Elixir" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -84,7 +84,9 @@
       <workItem from="1580818222910" duration="2184000" />
       <workItem from="1580986154539" duration="32056000" />
       <workItem from="1581062370786" duration="24447000" />
-      <workItem from="1581160573622" duration="12509000" />
+      <workItem from="1581160573622" duration="13186000" />
+      <workItem from="1581245756053" duration="1913000" />
+      <workItem from="1581247849352" duration="9224000" />
     </task>
     <servers />
   </component>
@@ -92,14 +94,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="303" y="119" key="SettingsEditor" timestamp="1581014272581">
+    <state x="369" y="137" width="618" height="514" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581247080564">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1581014272581" />
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581174419310">
+    <state x="369" y="137" width="618" height="514" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1366.743@0.25.1366.743" timestamp="1581247080564" />
+    <state x="303" y="119" key="SettingsEditor" timestamp="1581248136091">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581174419310" />
+    <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1581248136091" />
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581250172712">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581250172712" />
     <state x="430" y="179" key="run.anything.popup" timestamp="1581087531327">
       <screen x="0" y="25" width="1366" height="743" />
     </state>

@@ -1,103 +1,73 @@
-defmodule Tags do
+defmodule Blog.Tags do
   @moduledoc """
 """
   import Ecto.Query, warn: false
+  import Ecto.Changeset
   alias Blog.Repo
 
   alias Blog.Posts.Tag
-
-  @doc """
-  Returns the list of tags.
-
-  ## Examples
-
-      iex> list_tags()
-      [%Tag{}, ...]
-
-  """
+  alias Blog.Helpers.Helper
+  
   def list_tags do
     Repo.all(Tag)
   end
-
-  @doc """
-  Gets a single tag.
-
-  Raises `Ecto.NoResultsError` if the Tag does not exist.
-
-  ## Examples
-
-      iex> get_tag!(123)
-      %Tag{}
-
-      iex> get_tag!(456)
-      ** (Ecto.NoResultsError)
-
-  """
+  
   def get_tag!(id), do: Repo.get!(Tag, id)
 
-  @doc """
-  Creates a tag.
+  def get_by_name(name) do
+    Repo.fetch_by(Tag, name: name)
+  end
+  
+  def associate_tags(tag_string, post) do
+    string_to_list(tag_string)
+    |>  Enum.each(fn(s) ->
+      s_tag = Helper.slugified_title(s)
+      case get_by_name(s_tag) do
+        {:ok, tag} ->
+          assoc_tag(post, tag)
+        {:error, :resource_not_found} ->
+          {:ok, tag} = create_tag(%{name: s_tag})
+          assoc_tag(post, tag)
+      end
+      
+    end)
 
-  ## Examples
 
-      iex> create_tag(%{field: value})
-      {:ok, %Tag{}}
-
-      iex> create_tag(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
+  end
+  
+  defp assoc_tag(post, tag) do
+    post = Repo.preload(post, :tags)
+    tags = post.tags ++ [tag]
+                |> Enum.map(&Ecto.Changeset.change/1)
+    post
+    |> Ecto.Changeset.change()
+    |> Ecto.Changeset.put_assoc(:tags, tags)
+    |> Repo.update!
+  end
+  
   def create_tag(attrs \\ %{}) do
     %Tag{}
     |> Tag.changeset(attrs)
     |> Repo.insert()
   end
-
-  @doc """
-  Updates a tag.
-
-  ## Examples
-
-      iex> update_tag(tag, %{field: new_value})
-      {:ok, %Tag{}}
-
-      iex> update_tag(tag, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
+  
   def update_tag(%Tag{} = tag, attrs) do
     tag
     |> Tag.changeset(attrs)
     |> Repo.update()
   end
-
-  @doc """
-  Deletes a Tag.
-
-  ## Examples
-
-      iex> delete_tag(tag)
-      {:ok, %Tag{}}
-
-      iex> delete_tag(tag)
-      {:error, %Ecto.Changeset{}}
-
-  """
+  
   def delete_tag(%Tag{} = tag) do
     Repo.delete(tag)
   end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking tag changes.
-
-  ## Examples
-
-      iex> change_tag(tag)
-      %Ecto.Changeset{source: %Tag{}}
-
-  """
+  
   def change_tag(%Tag{} = tag) do
     Tag.changeset(tag, %{})
+  end
+  
+  defp string_to_list(string) do
+  string
+  |> String.split(",")
   end
 
 end
