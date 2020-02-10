@@ -5,7 +5,8 @@ defmodule Blog.Posts.Post do
   alias Blog.Accounts.User
   alias Blog.Categories.Category
   alias Blog.Posts.Tag
-   
+  alias Blog.Posts.Comment
+  
   schema "posts" do
     field :body, :string
     field :image, :string
@@ -17,6 +18,7 @@ defmodule Blog.Posts.Post do
 
     belongs_to :user, User
     belongs_to :category, Category
+    has_many :comments, Comment, on_delete: :delete_all
     many_to_many :tags, Tag, join_through: "posts_tags"
 
     timestamps()

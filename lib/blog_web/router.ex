@@ -27,6 +27,7 @@ defmodule BlogWeb.Router do
     get "/", PostController, :index
     get "/tags/:tag", PostController, :tag
     get "/categories/:category", PostController, :category
+    post "/comments/create/:post_slug", PostController, :create_comment
     resources "/posts", PostController
     resources "/users", UserController, except: [:new, :create]
 #    resources "/sessions", SessionController, only: [:new, :create, :delete]

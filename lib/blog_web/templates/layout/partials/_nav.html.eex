@@ -47,9 +47,9 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Us - Basic</a></li>
-                            <li><a href="#">About Me</a></li>
+                          <%= for cat <- categories do %>
+                              <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
+                          <% end %>
                         </ul>
                     </li>
                 <%= if @current_user !== nil do %>

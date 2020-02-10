@@ -3,16 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/categories.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/categories.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/helpers/helper.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/helpers/helper.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/posts/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts/post.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_nav.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_nav.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_aside.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_aside.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/_links.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/_links.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_comments.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_comments.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_create_comment.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_create_comment.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/error_helpers.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/error_helpers.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/layout_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/layout_view.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/views/partials_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/partials_view.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/post_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/post_view.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/blog/posts_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/blog/posts_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Template Data Languages" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -90,7 +93,7 @@
       <workItem from="1581160573622" duration="13186000" />
       <workItem from="1581245756053" duration="1913000" />
       <workItem from="1581247849352" duration="18065000" />
-      <workItem from="1581323327512" duration="4639000" />
+      <workItem from="1581323327512" duration="19022000" />
     </task>
     <servers />
   </component>
@@ -98,18 +101,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="145" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581346710807">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="145" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.743@0.25.1366.743" timestamp="1581346710807" />
     <state x="369" y="137" width="618" height="514" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581247080564">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="369" y="137" width="618" height="514" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1366.743@0.25.1366.743" timestamp="1581247080564" />
-    <state x="303" y="119" key="SettingsEditor" timestamp="1581248136091">
+    <state x="519" y="211" width="318" height="366" key="FileChooserDialogImpl" timestamp="1581334981042">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1581248136091" />
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581323829373">
+    <state x="519" y="211" width="318" height="366" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1581334981042" />
+    <state x="303" y="119" key="SettingsEditor" timestamp="1581335102148">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581323829373" />
+    <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1581335102148" />
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581333681340">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581333681340" />
+    <state x="512" y="324" width="332" height="141" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581344845076">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="512" y="324" width="332" height="141" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1366.743@0.25.1366.743" timestamp="1581344845076" />
     <state x="430" y="179" key="run.anything.popup" timestamp="1581087531327">
       <screen x="0" y="25" width="1366" height="743" />
     </state>

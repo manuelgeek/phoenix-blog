@@ -14,6 +14,12 @@ defmodule BlogWeb.ErrorHelpers do
     end)
   end
 
+  def error_tag_2(changeset, field) do
+    Enum.map(Keyword.get_values(changeset.errors, field), fn error ->
+      content_tag(:span, translate_error(error), class: "text-danger")
+    end)
+  end
+
   @doc """
   Translates an error message using gettext.
   """

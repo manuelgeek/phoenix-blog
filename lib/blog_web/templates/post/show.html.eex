@@ -49,17 +49,6 @@
 
                         </div>
 
-                        <div class="post-block post-author clearfix">
-                            <h3><i class="fa fa-user"></i>Author</h3>
-                            <div class="img-thumbnail">
-                                <a href="blog-post.html">
-                                    <img src="/dist/img/avatar.jpg" alt="">
-                                </a>
-                            </div>
-                            <p><strong class="name"><a href="#">John Doe</a></strong></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui. </p>
-                        </div>
-
                         <%= render BlogWeb.PartialsView, "post/_comments.html", assigns %>
 
                         <%= render BlogWeb.PartialsView, "post/_create_comment.html", assigns %>
@@ -74,6 +63,3 @@
     </div>
 </div>
 
-
-<span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
-<span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>

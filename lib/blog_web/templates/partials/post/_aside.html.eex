@@ -14,7 +14,7 @@
 
         <h4>Categories</h4>
         <ul class="nav nav-list primary push-bottom">
-        <%= for cat <- categories do %>
+        <%= for cat <- categories() do %>
             <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
         <% end %>
         </ul>
@@ -31,7 +31,7 @@
                             <div class="post-image">
                                 <div class="img-thumbnail">
                                     <a href="blog-post.html">
-                                        <img src="img/blog/blog-thumb-1.jpg" alt="">
+                                        <img src="/dist/img/blog/blog-thumb-1.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                             <div class="post-image">
                                 <div class="img-thumbnail">
                                     <a href="blog-post.html">
-                                        <img src="img/blog/blog-thumb-2.jpg" alt="">
+                                        <img src="/dist/img/blog/blog-thumb-2.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="post-image">
                                 <div class="img-thumbnail">
                                     <a href="blog-post.html">
-                                        <img src="img/blog/blog-thumb-3.jpg" alt="">
+                                        <img src="/dist/img/blog/blog-thumb-3.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -76,51 +76,23 @@
                 </div>
                 <div class="tab-pane" id="recentPosts">
                     <ul class="simple-post-list">
-                        <li>
-                            <div class="post-image">
-                                <div class="img-thumbnail">
-                                    <a href="blog-post.html">
-                                        <img src="img/blog/blog-thumb-2.jpg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-info">
-                                <a href="blog-post.html">Vitae Nibh Un Odiosters</a>
-                                <div class="post-meta">
-                                     Jan 10, 2013
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="post-image">
-                                <div class="img-thumbnail">
-                                    <a href="blog-post.html">
-                                        <img src="img/blog/blog-thumb-3.jpg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-info">
-                                <a href="blog-post.html">Odiosters Nullam Vitae</a>
-                                <div class="post-meta">
-                                     Jan 10, 2013
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="post-image">
-                                <div class="img-thumbnail">
-                                    <a href="blog-post.html">
-                                        <img src="img/blog/blog-thumb-1.jpg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="post-info">
-                                <a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
-                                <div class="post-meta">
-                                     Jan 10, 2013
-                                </div>
-                            </div>
-                        </li>
+                      <%= for post <- latest_posts() do %>
+                       <li>
+                           <div class="post-image">
+                               <div class="img-thumbnail">
+                                   <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
+                                       <img width="50" src="<%= Routes.static_path(@conn, post.image) %>" alt="recent post image">
+                                   </a>
+                               </div>
+                           </div>
+                           <div class="post-info">
+                               <a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a>
+                               <div class="post-meta">
+                                    <%= date post.inserted_at %>
+                               </div>
+                           </div>
+                       </li>
+                      <% end %>
                     </ul>
                 </div>
             </div>

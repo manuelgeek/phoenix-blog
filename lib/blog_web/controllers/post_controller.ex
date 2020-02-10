@@ -66,10 +66,11 @@ defmodule BlogWeb.PostController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    post = Posts.get_by_slug!(id)
-    IO.inspect post
-    render(conn, "show.html", post: post)
+  def show(conn, params) do
+#    %{"id" => id}
+    post = Posts.get_by_slug!(params["id"])
+    comments = Posts.list_comments(params, post.id)
+    render(conn, "show.html", post: post, comments: comments)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -99,6 +100,23 @@ defmodule BlogWeb.PostController do
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: Routes.post_path(conn, :index))
+  end
+  
+  def create_comment(conn, params) do
+    %{"post_slug" => post_slug, "comment" => comment_params} = params
+    post = Posts.get_by_slug!(post_slug)
+    comment_params = Map.merge(comment_params, %{"post_id" => post.id, "user_id" => conn.assigns.current_user.id})
+    case Posts.create_comment(comment_params) do
+      {:ok, _comment} ->
+        conn
+        |> put_flash(:success, "Comment created successfully.")
+        |> redirect(to: Routes.post_path(conn, :show, post.slug))
+    
+      {:error, %Ecto.Changeset{} = changeset} ->
+        comments = Posts.list_comments(params, post.id)
+        conn |> render("show.html", post: post, changeset: changeset, comments: comments)
+    end
+    
   end
   
 end
