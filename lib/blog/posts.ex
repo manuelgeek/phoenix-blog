@@ -28,6 +28,15 @@ defmodule Blog.Posts do
     |> Repo.paginate(params)
   end
   
+  def list_category_posts(params, category) do
+    Post
+    |> order_by(desc: :inserted_at)
+    |> join(:left, [p], c in assoc(p, :category))
+    |> where([p, c], c.name == ^category)
+    |> preload([p, c], [:user, :category, :tags])
+    |> Repo.paginate(params)
+  end
+  
   def get_post!(id), do: Repo.get!(Post, id)
 
   def get_by_slug!(slug) do

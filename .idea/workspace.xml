@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/categories.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/categories.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/helpers/helper.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/helpers/helper.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/tags.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/tags.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/router.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/app.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_aside.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_aside.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/_links.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/_links.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/partials_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/partials_view.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/post_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/post_view.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +90,7 @@
       <workItem from="1581160573622" duration="13186000" />
       <workItem from="1581245756053" duration="1913000" />
       <workItem from="1581247849352" duration="18065000" />
+      <workItem from="1581323327512" duration="4639000" />
     </task>
     <servers />
   </component>
@@ -102,10 +106,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="303" y="119" key="SettingsEditor/0.25.1366.743@0.25.1366.743" timestamp="1581248136091" />
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581250172712">
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581323829373">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581250172712" />
+    <state x="311" y="105" width="734" height="578" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1366.743@0.25.1366.743" timestamp="1581323829373" />
     <state x="430" y="179" key="run.anything.popup" timestamp="1581087531327">
       <screen x="0" y="25" width="1366" height="743" />
     </state>

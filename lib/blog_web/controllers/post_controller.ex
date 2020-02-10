@@ -8,6 +8,7 @@ defmodule BlogWeb.PostController do
   alias Blog.Posts.Post
   alias Blog.Categories
   alias Blog.Helpers.Helper
+  
 
   plug :user_check when action in [:new, :create]
   plug :id_check when action in [:edit, :update, :delete]
@@ -19,9 +20,27 @@ defmodule BlogWeb.PostController do
   end
   
   def tag(conn, params) do
-    tag = Tags.get_by_name!(params["tag"])
-    page = Posts.list_tag_posts(params,tag.name)
-    render(conn, "index.html", posts: page.entries, page: page, tag: tag)
+    try do
+      tag = Tags.get_by_name!(params["tag"])
+      page = Posts.list_tag_posts(params,tag.name)
+      render(conn, "index.html", posts: page.entries, page: page, title: tag.name)
+    rescue
+      Ecto.NoResultsError ->
+        {:error, :not_found, "No result found"}
+        Helper.nothing_found(conn)
+    end
+  end
+  
+  def category(conn, params) do
+    try do
+      category = Categories.get_by_slug!(params["category"])
+      page = Posts.list_category_posts(params, category.name)
+      render(conn, "index.html", posts: page.entries, page: page, title: category.name)
+    rescue
+      Ecto.NoResultsError ->
+        {:error, :not_found, "No result found"}
+        Helper.nothing_found(conn)
+    end
   end
 
   def new(conn, _params) do

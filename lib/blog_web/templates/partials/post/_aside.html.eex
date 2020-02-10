@@ -14,11 +14,9 @@
 
         <h4>Categories</h4>
         <ul class="nav nav-list primary push-bottom">
-            <li><a href="#">Design</a></li>
-            <li><a href="#">Photos</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">Lifestyle</a></li>
-            <li><a href="#">Technology</a></li>
+        <%= for cat <- categories do %>
+            <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
+        <% end %>
         </ul>
 
         <div class="tabs">

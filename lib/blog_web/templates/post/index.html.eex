@@ -1,4 +1,4 @@
-<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: if assigns[:tag], do: "Tag: " <> @tag.name, else: "Latest Posts"  %>
+<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: if assigns[:title], do: "Posts in: " <> @title, else: "Latest Posts"  %>
 <div class="container">
    <div class="row">
        <div class="col-md-9">

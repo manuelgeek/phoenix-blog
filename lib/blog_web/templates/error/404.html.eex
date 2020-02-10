@@ -1,0 +1,12 @@
+<%= render BlogWeb.PartialsView, "_breadcrumb.html", title: "Not Found"  %>
+<div class="container">
+   <div class="row">
+       <div class="col-md-10 col-md-offset-2">
+           <div class="blog-posts">
+               <h2>404 Not Found</h2>
+               <p>Go Back <a href="/" >Home</a></p>
+           </div>
+       </div>
+
+   </div>
+</div>
