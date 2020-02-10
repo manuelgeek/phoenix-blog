@@ -50,6 +50,16 @@ defmodule Blog.Posts do
     Repo.all(query)
   end
   
+  def get_popular_posts do
+    query = from p in Post,
+         left_join: c in assoc(p, :comments),
+         group_by: p.id,
+         having: count(c.id) > 1,
+         order_by: [desc: p.inserted_at],
+         limit: 3
+    Repo.all(query)
+  end
+  
   def create_post(attrs \\ %{}) do
     %Post{}
     |> Post.changeset(attrs)

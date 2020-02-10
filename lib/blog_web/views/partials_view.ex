@@ -11,6 +11,10 @@ defmodule BlogWeb.PartialsView do
   def latest_posts do
     Posts.get_latest_posts()
   end
+  
+  def popular_posts do
+    Posts.get_popular_posts()
+  end
 
   def date(time) do
     {:ok, final} = time |> Timex.format("{Mshort} {D}, {YYYY}")
