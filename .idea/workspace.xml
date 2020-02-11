@@ -3,19 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/accounts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/accounts.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/posts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog/posts/comment.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/posts/comment.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/authorize.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/authorize.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/post_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/controllers/user_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/router.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/error/404.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/error/404.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_nav.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_nav.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_comments.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/partials/post/_comments.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/_links.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/_links.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/new.html.eex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/edit.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/edit.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/form.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +83,7 @@
       <workItem from="1581245756053" duration="1913000" />
       <workItem from="1581247849352" duration="18065000" />
       <workItem from="1581323327512" duration="23940000" />
-      <workItem from="1581405886782" duration="4676000" />
+      <workItem from="1581405886782" duration="5391000" />
     </task>
     <servers />
   </component>

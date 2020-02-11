@@ -1,21 +1,54 @@
 <%= form_for @changeset, @action, [], fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Something went wrong. Please check the errors below.</p>
+
+  <div class="container">
+
+      <div class="row">
+      <div class="col-md-12">
+
+          <div class="row featured-boxes login">
+              <div class="col-sm-6 col-sm-offset-3">
+                  <div class="featured-box featured-box-secundary default info-content">
+                      <div class="box-content">
+                          <h4>Edit Account</h4>
+                          <div class="row">
+                              <div class="form-group">
+                                  <div class="col-md-12">
+                                      <label>Name</label>
+                                      <%= text_input f, :name , class: "form-control input-lg"%>
+                                      <%= error_tag f, :name %>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-group">
+                                  <div class="col-md-12">
+                                      <label>Username</label>
+                                      <%= text_input f, :username , class: "form-control input-lg"%>
+                                      <%= error_tag f, :username %>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="form-group">
+                                  <div class="col-md-12">
+                                      <label>E-mail </label>
+                                      <%= email_input f, :email , class: "form-control input-lg"%>
+                                      <%= error_tag f, :email %>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <input type="submit" value="Update" class="btn btn-primary pull-right push-bottom" data-loading-text="Loading...">
+                              </div>
+                          </div>
+
+                        <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  <% end %>
-
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
-
-  <%= if @action == "/users" do %>
-    <%= label f, :password %>
-    <%= password_input f, :password %>
-    <%= error_tag f, :password %>
-  <% end %>
-
-  <div>
-    <%= submit "Save" %>
-  </div>
-<% end %>
+</div>
