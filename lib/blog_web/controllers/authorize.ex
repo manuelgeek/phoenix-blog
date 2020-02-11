@@ -49,12 +49,12 @@ defmodule BlogWeb.Authorize do
         %Plug.Conn{params: %{"id" => id}, assigns: %{current_user: current_user}} = conn,
         _opts
       ) do
-    if id == to_string(current_user.id) do
+    if id == to_string(current_user.username) do
       conn
     else
       conn
       |> put_flash(:error, "You are not authorized to view this page")
-      |> redirect(to: Routes.user_path(conn, :show, current_user))
+      |> redirect(to: Routes.post_path(conn, :index))
       |> halt()
     end
   end

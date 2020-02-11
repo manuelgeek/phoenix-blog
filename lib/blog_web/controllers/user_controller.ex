@@ -9,8 +9,8 @@ defmodule BlogWeb.UserController do
   alias Phauxth.Remember
 
   # the following plugs are defined in the controllers/authorize.ex file
-  plug :user_check when action in [:index, :show]
-  plug :id_check when action in [:edit, :update, :delete]
+  plug :user_check when action in [:index]
+  plug :id_check when action in [:edit, :update, :delete, :show]
 
   def index(conn, _) do
     users = Accounts.list_users()
@@ -39,8 +39,8 @@ defmodule BlogWeb.UserController do
     end
   end
 
-  def show(%Plug.Conn{assigns: %{current_user: user}} = conn, %{"id" => id}) do
-    user = if id == to_string(user.id), do: user, else: Accounts.get_user!(id)
+  def show(%Plug.Conn{assigns: %{current_user: user}} = conn, %{"id" => username}) do
+    user = if username == to_string(user.username), do: user, else: Accounts.get_by_username!(username)
     render(conn, "show.html", user: user)
   end
 

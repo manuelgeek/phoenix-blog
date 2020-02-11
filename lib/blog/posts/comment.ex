@@ -2,7 +2,7 @@ defmodule Blog.Posts.Comment do
   use Ecto.Schema
   import Ecto.Changeset
   alias Blog.Accounts.User
-  alias Blog.Categories.Post
+  alias Blog.Posts.Post
 
   schema "comments" do
     field :name, :string
@@ -19,4 +19,5 @@ defmodule Blog.Posts.Comment do
     |> cast(attrs, [:name, :user_id, :post_id])
     |> validate_required([:name])
   end
+  
 end

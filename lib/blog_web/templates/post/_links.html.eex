@@ -1,4 +1,4 @@
-<span><i class="fa fa-user"></i> By <a href="#"><%= @post.user.name %></a> </span>
+<span><i class="fa fa-user"></i> By <a href="<%= Routes.post_path(@conn, :user, @post.user.username) %>"><%= @post.user.name %></a> </span>
 <span><i class="fa fa-list"></i> <a href="<%= Routes.post_path(@conn, :category, @post.category.slug) %>"><%= @post.category.name %></a> </span>
 <span><i class="fa fa-tag"></i>
 <%= for tag <- @post.tags do %>

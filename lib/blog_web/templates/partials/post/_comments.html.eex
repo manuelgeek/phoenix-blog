@@ -21,11 +21,12 @@
             </div>
         </li>
 
-        <br>
+      <% end %>
+
+       <br>
         <ul class="pagination pagination-lg pull-right">
           <%= pagination_links @comments %>
         </ul>
-      <% end %>
     <% end %>
     </ul>
 

@@ -59,9 +59,9 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Profile</a></li>
+                            <li><a href="<%= Routes.user_path(@conn, :show, @current_user.username) %>">Profile</a></li>
                             <li><a href="<%= Routes.post_path(@conn, :new) %>">New Post</a></li>
-                            <li><a href="#">My Posts</a></li>
+                            <li><a href="<%= Routes.post_path(@conn, :user, @current_user.username) %>">My Posts</a></li>
                             <li> <a href="/logout" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">Logout</a></li>
                             <%= form_for @conn, Routes.session_path(@conn, :delete), [as: :session , id: "logout-form"], fn f -> %>

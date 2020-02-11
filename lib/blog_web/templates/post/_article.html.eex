@@ -11,8 +11,8 @@
    </div>
 
    <div class="post-date">
-       <span class="day">10</span>
-       <span class="month">Jan</span>
+       <span class="day"><%= date(@post.inserted_at) %></span>
+       <span class="month"><%= Timex.from_now(@post.inserted_at) %></span>
    </div>
 
    <div class="post-content">

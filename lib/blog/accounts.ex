@@ -15,17 +15,13 @@ defmodule Blog.Accounts do
   @spec list_users() :: [User.t()]
   def list_users, do: Repo.all(User)
 
-  @doc """
-  Gets a single user.
-  """
   @spec get_user!(integer) :: User.t() | no_return
   def get_user!(id), do: Repo.get!(User, id)
 
-  @doc """
-  Gets a user based on the params.
+  def get_by_username!(username) do
+    Repo.get_by(User, username: username)
+  end
 
-  This is used by Phauxth to get user information.
-  """
   @spec get_by(map) :: User.t() | nil
   def get_by(%{"session_id" => session_id}) do
     with %Session{user_id: user_id} <- Sessions.get_session(session_id),

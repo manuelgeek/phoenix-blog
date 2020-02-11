@@ -19,6 +19,14 @@ defmodule Blog.Posts do
 #
   end
   
+  def list_user_posts(params, user_id) do
+    Post
+    |> order_by(desc: :inserted_at)
+    |> where([p], p.user_id == ^user_id)
+    |> preload([:user, :category, :tags])
+    |> Repo.paginate(params)
+  end
+  
   def list_tag_posts(params, tag) do
     Post
     |> order_by(desc: :inserted_at)
