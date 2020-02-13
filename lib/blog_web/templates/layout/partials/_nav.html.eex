@@ -38,9 +38,7 @@
                     <li >
                         <a href="<%= Routes.post_path(@conn, :index) %>">Home</a>
                     </li>
-                    <li>
-                        <a href="#">Shortcodes</a>
-                    </li>
+
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#">
                             Categories

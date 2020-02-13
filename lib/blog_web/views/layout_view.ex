@@ -9,4 +9,10 @@ defmodule BlogWeb.LayoutView do
   def categories do
     Categories.list_active_categories()
   end
+
+  def year do
+    {:ok, final} = Timex.now |> Timex.format("{YYYY}")
+    final
+  end
+  
 end
