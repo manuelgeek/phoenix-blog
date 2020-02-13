@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_footer.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_footer.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_nav.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/layout/partials/_nav.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blog_web/views/layout_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/views/layout_view.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/user/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/user/form.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -85,7 +85,7 @@
       <workItem from="1581247849352" duration="18065000" />
       <workItem from="1581323327512" duration="23940000" />
       <workItem from="1581405886782" duration="5847000" />
-      <workItem from="1581583855388" duration="1555000" />
+      <workItem from="1581583855388" duration="3875000" />
     </task>
     <servers />
   </component>
@@ -97,6 +97,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="145" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.743@0.25.1366.743" timestamp="1581346710807" />
+    <state x="464" y="205" width="428" height="378" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581590195620">
+      <screen x="0" y="25" width="1366" height="743" />
+    </state>
+    <state x="464" y="205" width="428" height="378" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1366.743@0.25.1366.743" timestamp="1581590195620" />
     <state x="369" y="137" width="618" height="514" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581247080564">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
