@@ -3,15 +3,15 @@ defmodule BlogWeb.PartialsView do
   alias Blog.Categories
   alias Blog.Posts
   import Scrivener.HTML
-  
+
   def categories do
     Categories.list_active_categories()
   end
-  
+
   def latest_posts do
     Posts.get_latest_posts()
   end
-  
+
   def popular_posts do
     Posts.get_popular_posts()
   end
@@ -25,5 +25,4 @@ defmodule BlogWeb.PartialsView do
     {:ok, final} = time |> Timex.format("%l:%M %P", :strftime)
     final
   end
-  
 end

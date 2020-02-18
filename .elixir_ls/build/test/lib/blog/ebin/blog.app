@@ -6,6 +6,7 @@
                              phoenix_ecto]},
               {description,"blog"},
               {modules,['Elixir.Blog','Elixir.Blog.Accounts',
+                        'Elixir.Blog.Accounts.Account',
                         'Elixir.Blog.Accounts.User','Elixir.Blog.Application',
                         'Elixir.Blog.Categories',
                         'Elixir.Blog.Categories.Category',

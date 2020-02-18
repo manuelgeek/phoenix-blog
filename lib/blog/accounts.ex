@@ -16,20 +16,20 @@ defmodule Blog.Accounts do
   def list_users, do: Repo.all(User)
 
   @spec get_user!(integer) :: User.t() | no_return
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id), do: Repo.get!(User, id) |> Repo.preload([:account])
 
   def get_by_username!(username) do
-    Repo.get_by(User, username: username)
+    Repo.get_by(User, username: username) |> Repo.preload([:account])
   end
 
   @spec get_by(map) :: User.t() | nil
   def get_by(%{"session_id" => session_id}) do
     with %Session{user_id: user_id} <- Sessions.get_session(session_id),
-         do: Repo.get(User, user_id)
+         do: Repo.get(User, user_id) |> Repo.preload([:account])
   end
 
   def get_by(%{"email" => email}) do
-    Repo.get_by(User, email: email)
+    Repo.get_by(User, email: email) |> Repo.preload([:account])
   end
 
   @doc """
@@ -66,5 +66,33 @@ defmodule Blog.Accounts do
   @spec change_user(User.t()) :: Ecto.Changeset.t()
   def change_user(%User{} = user) do
     User.changeset(user, %{})
+  end
+
+  alias Blog.Accounts.Account
+
+  def list_accounts do
+    Repo.all(Account)
+  end
+
+  def get_account!(id), do: Repo.get!(Account, id)
+
+  def create_account(attrs \\ %{}) do
+    %Account{}
+    |> Account.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def update_account(%Account{} = account, attrs) do
+    account
+    |> Account.update_changeset(attrs)
+    |> Repo.update()
+  end
+
+  def delete_account(%Account{} = account) do
+    Repo.delete(account)
+  end
+
+  def change_account(%Account{} = account) do
+    Account.changeset(account, %{})
   end
 end

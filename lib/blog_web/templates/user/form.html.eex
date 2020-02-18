@@ -1,56 +1,91 @@
-<%= form_for @changeset, @action, [], fn f -> %>
-
-  <div class="container">
-
-      <div class="row">
-      <div class="col-md-12">
-
-          <div class="row featured-boxes login">
-              <div class="col-sm-6 col-sm-offset-3">
-                  <div class="featured-box featured-box-secundary default info-content">
-                      <div class="box-content">
-                          <h4>Edit Account</h4>
-                          <div class="row">
-                              <div class="form-group">
-                                  <div class="col-md-12">
-                                      <label>Name</label>
-                                      <%= text_input f, :name , class: "form-control input-lg"%>
-                                      <%= error_tag f, :name %>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="form-group">
-                                  <div class="col-md-12">
-                                      <label>Username</label>
-                                      <%= text_input f, :username , class: "form-control input-lg"%>
-                                      <%= error_tag f, :username %>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="form-group">
-                                  <div class="col-md-12">
-                                      <label>E-mail </label>
-                                      <%= email_input f, :email , class: "form-control input-lg"%>
-                                      <%= error_tag f, :email %>
-                                  </div>
-                              </div>
-                          </div>
-
-
-                          <div class="row">
-                              <div class="col-md-12">
-                                  <input type="submit" value="Update" class="btn btn-primary pull-right push-bottom" data-loading-text="Loading...">
-                              </div>
-                          </div>
-
-                        <% end %>
-                        </div>
-                    </div>
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row featured-boxes login">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="featured-box featured-box-secundary default info-content">
+            <div class="box-content row">
+              <h4>Edit Account</h4>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>Name <sup class="text-danger">*</sup></label>
+                    <%= text_input f, :name , class: "form-control input-lg"%>
+                    <%= error_tag f, :name %>
+                  </div>
                 </div>
-            </div>
-
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>Username <sup class="text-danger">*</sup></label>
+                    <%= text_input f, :username , class: "form-control input-lg"%>
+                    <%= error_tag f, :username %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>E-mail <sup class="text-danger">*</sup></label>
+                    <%= email_input f, :email , class: "form-control input-lg"%>
+                    <%= error_tag f, :email %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>Avatar(Optional)</label>
+                    <%= file_input f, :img_file, class: "form-control input-lg", required: false, accept: "image/*", name: "account[img_file]" %>
+                    <%= error_tag f, :img_file %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>Bio </label>
+                    <textarea name="account[bio]" class="form-control input-lg" cols="30" rows="3"><%= @current_user.account.bio %></textarea>
+                    <%= error_tag f, :bio %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>Facebook</label>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">https://facebook.com/</span>
+                      <input type="text" name="account[fb]" class="form-control input-lg" value="<%= @current_user.account.fb %>">
+                    </div>
+                    <%= error_tag f, :fb %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <label>Twitter</label>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">https://twitter.com/</span>
+                      <input type="text" name="account[tw]" class="form-control input-lg" value="<%= @current_user.account.tw %>">
+                    </div>
+                    <%= error_tag f, :tw %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="submit" value="Update" class="btn btn-primary pull-right push-bottom" data-loading-text="Loading...">
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 </div>

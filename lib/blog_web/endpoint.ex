@@ -13,7 +13,7 @@ defmodule BlogWeb.Endpoint do
     at: "/",
     from: :blog,
     gzip: false,
-    only: ~w(css fonts images media dist js favicon.ico robots.txt)
+    only: ~w(css fonts images media avatar dist js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

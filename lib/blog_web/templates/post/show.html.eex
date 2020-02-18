@@ -1,65 +1,48 @@
 <%= render BlogWeb.PartialsView, "_breadcrumb.html", title: @post.title %>
 <div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="blog-posts single-post">
-
-                <article class="post post-large blog-single-post">
-                    <div class="post-image">
-                        <div class="owl-carousel" data-plugin-options='{"items":1}'>
-                            <div>
-                                <div class="img-thumbnail">
-                                    <img class="img-responsive" src="<%= Routes.static_path(@conn, @post.image) %>" alt="post image">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="post-date">
-                        <span class="day"><%= date(@post.inserted_at) %></span>
-                        <span class="month"><%= Timex.from_now(@post.inserted_at) %></span>
-                    </div>
-
-                    <div class="post-content">
-
-                        <h2><a href="<%= Routes.post_path(@conn, :show, @post.slug) %>"><%= @post.title %></a></h2>
-
-                        <div class="post-meta">
-                            <%= render "_links.html", post: @post , conn: @conn %>
-                        </div>
-
-                        <p>
-                            <%= @post.body %>
-                        </p>
-
-
-                        <div class="post-block post-share">
-                            <h3><i class="fa fa-share"></i>Share this post</h3>
-
-                            <!-- AddThis Button BEGIN -->
-                            <div class="addthis_toolbox addthis_default_style ">
-                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                <a class="addthis_button_tweet"></a>
-                                <a class="addthis_button_pinterest_pinit"></a>
-                                <a class="addthis_counter addthis_pill_style"></a>
-                            </div>
-                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
-                            <!-- AddThis Button END -->
-
-                        </div>
-
-                        <%= render BlogWeb.PartialsView, "post/_comments.html", assigns %>
-
-                        <%= render BlogWeb.PartialsView, "post/_create_comment.html", assigns %>
-
-                    </div>
-                </article>
-
+  <div class="row">
+    <div class="col-md-9">
+      <div class="blog-posts single-post">
+        <article class="post post-large blog-single-post">
+          <div class="post-image">
+            <div class="owl-carousel" data-plugin-options='{"items":1}'>
+              <div>
+                <div class="img-thumbnail">
+                  <img class="img-responsive" src="<%= Routes.static_path(@conn, @post.image) %>" alt="post image">
+                </div>
+              </div>
             </div>
-        </div>
-
-        <%= render BlogWeb.PartialsView, "post/_aside.html", assigns %>
+          </div>
+          <div class="post-date">
+            <span class="day"><%= date(@post.inserted_at) %></span>
+            <span class="month"><%= Timex.from_now(@post.inserted_at) %></span>
+          </div>
+          <div class="post-content">
+            <h2><a href="<%= Routes.post_path(@conn, :show, @post.slug) %>"><%= @post.title %></a></h2>
+            <div class="post-meta">
+              <%= render "_links.html", post: @post , conn: @conn %>
+            </div>
+            <p>
+              <%= @post.body %>
+            </p>
+            <div class="post-block post-share">
+              <h3><i class="fa fa-share"></i>Share this post</h3>
+              <!-- AddThis Button BEGIN -->
+              <div class="addthis_toolbox addthis_default_style ">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+                <a class="addthis_button_pinterest_pinit"></a>
+                <a class="addthis_counter addthis_pill_style"></a>
+              </div>
+              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53"></script>
+              <!-- AddThis Button END -->
+            </div>
+            <%= render BlogWeb.PartialsView, "post/_comments.html", assigns %>
+            <%= render BlogWeb.PartialsView, "post/_create_comment.html", assigns %>
+          </div>
+        </article>
+      </div>
     </div>
+    <%= render BlogWeb.PartialsView, "post/_aside.html", assigns %>
+  </div>
 </div>
-

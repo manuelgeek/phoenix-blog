@@ -1,35 +1,30 @@
 <%= render BlogWeb.PartialsView, "_breadcrumb.html", title: "Profile: " <> @user.name %>
-
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-
-            <div class="owl-carousel1" data-plugin-options='{"items": 1}'>
-                <div>
-                    <div class="thumbnail">
-                        <img alt="" height="300" class="img-responsive" src="/dist/img/team/team-3.jpg">
-                    </div>
-                </div>
-            </div>
-
+  <div class="row">
+    <div class="col-md-4">
+      <div class="owl-carousel1" data-plugin-options='{"items": 1}'>
+        <div>
+          <div class="thumbnail">
+            <img alt="dp" height="300" class="img-responsive" src="<%= Routes.static_path(@conn, @user.account.avatar) %>">
+          </div>
         </div>
-
-        <div class="col-md-8">
-
-            <h2 class="shorter"><%= @user.name %>
-                <%= link "Edit Profile", to: Routes.user_path(@conn, :edit, @user.username), class: "btn btn-primary btn-sm pull-right" %>
-            </h2>
-            <h4><%= @user.username %></h4>
-
-            <span class="thumb-info-social-icons">
-                <a data-tooltip data-placement="bottom" target="_blank" href="http://www.facebook.com" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-                <a data-tooltip data-placement="bottom" href="http://www.twitter.com" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-                <a data-tooltip data-placement="bottom" href="http://www.linkedin.com" data-original-title="Linkedin"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
-            </span>
-
-            <p>About Me</p>
-
-        </div>
+      </div>
     </div>
+    <div class="col-md-8">
+      <h2 class="shorter"><%= @user.name %>
+        <%= link "Edit Profile", to: Routes.user_path(@conn, :edit, @user.username), class: "btn btn-primary btn-sm pull-right" %>
+      </h2>
+      <h4><%= @user.username %></h4>
+      <span class="thumb-info-social-icons">
+        <%= if @user.account.fb !== nil do %>
+          <a data-tooltip data-placement="bottom" target="_blank" href="http://www.facebook.com/<%= @user.account.fb %>" data-original-title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+        <% end %>
+        <%= if @user.account.tw !== nil do %>
+          <a data-tooltip data-placement="bottom" href="http://www.twitter.com/<%= @user.account.tw %>" data-original-title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+        <% end %>
+      </span>
+      <h4>About:</h4>
+      <p><%= @user.account.bio %></p>
+    </div>
+  </div>
 </div>
-

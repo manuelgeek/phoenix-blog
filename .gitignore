@@ -35,3 +35,4 @@ npm-debug.log
 /.idea
 /.elixir_ls
 /.vscode
+/priv/static/avatar/*

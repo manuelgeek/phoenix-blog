@@ -1,79 +1,98 @@
 <header id="header">
+  <div class="container">
+    <div class="logo">
+      <a href="#">
+        <img alt="Porto" width="111" height="54" data-sticky-width="82" data-sticky-height="40" src="/dist/img/logo.png">
+      </a>
+    </div>
+    <div class="search">
+      <form id="searchForm" action="page-search-results.html" method="get">
+        <div class="input-group">
+          <input type="text" class="form-control search" name="q" id="q" placeholder="Search..." required>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <ul class="social-icons">
+      <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+      <li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+      <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+    </ul>
+    <nav>
+      <ul class="nav nav-pills nav-top">
+        <li class="phone">
+          <span><i class="fa fa-phone"></i>(123) 456-7890</span>
+        </li>
+      </ul>
+    </nav>
+    <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <div class="navbar-collapse nav-main-collapse collapse">
     <div class="container">
-        <div class="logo">
-            <a href="#">
-                <img alt="Porto" width="111" height="54" data-sticky-width="82" data-sticky-height="40" src="/dist/img/logo.png">
+      <nav class="nav-main mega-menu">
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+          <li >
+            <a href="<%= Routes.post_path(@conn, :index) %>">Home</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#">
+              Categories
+              <i class="fa fa-angle-down"></i>
             </a>
-        </div>
-        <div class="search">
-            <form id="searchForm" action="page-search-results.html" method="get">
-                <div class="input-group">
-                    <input type="text" class="form-control search" name="q" id="q" placeholder="Search..." required>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <nav>
-            <ul class="nav nav-pills nav-top">
-                <li class="phone">
-                    <span><i class="fa fa-phone"></i>(123) 456-7890</span>
-                </li>
+            <ul class="dropdown-menu">
+              <%= for cat <- categories do %>
+                <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
+              <% end %>
             </ul>
-        </nav>
-        <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
-            <i class="fa fa-bars"></i>
-        </button>
-    </div>
-    <div class="navbar-collapse nav-main-collapse collapse">
-        <div class="container">
-            <ul class="social-icons">
-                <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
-                <li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
-                <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
-            </ul>
-            <nav class="nav-main mega-menu">
-                <ul class="nav nav-pills nav-main" id="mainMenu">
-                    <li >
-                        <a href="<%= Routes.post_path(@conn, :index) %>">Home</a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#">
-                            Categories
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                          <%= for cat <- categories do %>
-                              <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
-                          <% end %>
-                        </ul>
-                    </li>
-                <%= if @current_user !== nil do %>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#">
-                            <%= @current_user.name %>
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<%= Routes.user_path(@conn, :show, @current_user.username) %>">Profile</a></li>
-                            <li><a href="<%= Routes.post_path(@conn, :new) %>">New Post</a></li>
-                            <li><a href="<%= Routes.post_path(@conn, :user, @current_user.username) %>">My Posts</a></li>
-                            <li> <a href="/logout" onclick="event.preventDefault();
+          </li>
+          <%= if @current_user !== nil do %>
+            <li class="dropdown mega-menu-item mega-menu-signin signin logged" id="headerAccount">
+              <a class="dropdown-toggle" href="#">
+                <i class="fa fa-user"></i> <%= @current_user.name %>
+                <i class="fa fa-angle-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="mega-menu-content">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="user-avatar">
+                          <div class="img-thumbnail">
+                            <img src="<%= Routes.static_path(@conn, @current_user.account.avatar) %>" alt="dp">
+                          </div>
+                          <p><strong><%= @current_user.name %></strong><span><%= @current_user.username %></span></p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <ul class="list-account-options">
+                          <li>
+                            <a href="<%= Routes.user_path(@conn, :show, @current_user.username) %>">My Account</a>
+                          </li>
+                          <li><a href="<%= Routes.post_path(@conn, :new) %>">New Post</a></li>
+                          <li><a href="<%= Routes.post_path(@conn, :user, @current_user.username) %>">My Posts</a></li>
+                          <li> <a href="/logout" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">Logout</a></li>
-                            <%= form_for @conn, Routes.session_path(@conn, :delete), [as: :session , id: "logout-form"], fn f -> %>
-                              <input type="hidden" name="id" value="<%= @conn.private[:plug_session]["phauxth_session_id"] %>">
-                              <% end %>
-                        </ul>
-                    </li>
-                <% else %>
-                  <li>
-                      <a href="/login">Login</a>
-                  </li>
-                <% end %>
-                </ul>
-            </nav>
-        </div>
-    </div>
+                          <%= form_for @conn, Routes.session_path(@conn, :delete), [as: :session , id: "logout-form"], fn f -> %>
+                          <input type="hidden" name="id" value="<%= @conn.private[:plug_session]["phauxth_session_id"] %>">
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>
 </header>

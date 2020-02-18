@@ -5,17 +5,18 @@ defmodule Blog.Accounts.User do
 
   alias Blog.Sessions.Session
   alias Blog.Posts.Post
+  alias Blog.Accounts.Account
 
   @type t :: %__MODULE__{
-    id: integer,
-    email: String.t(),
-    name: String.t(),
-    username: String.t(),
-    password_hash: String.t(),
-    sessions: [Session.t()] | %Ecto.Association.NotLoaded{},
-    inserted_at: DateTime.t(),
-    updated_at: DateTime.t()
-  }
+          id: integer,
+          email: String.t(),
+          name: String.t(),
+          username: String.t(),
+          password_hash: String.t(),
+          sessions: [Session.t()] | %Ecto.Association.NotLoaded{},
+          inserted_at: DateTime.t(),
+          updated_at: DateTime.t()
+        }
 
   schema "users" do
     field :name, :string
@@ -25,6 +26,7 @@ defmodule Blog.Accounts.User do
     field :password_hash, :string
     has_many :posts, Post, on_delete: :delete_all
     has_many :sessions, Session, on_delete: :delete_all
+    has_one :account, Account, on_delete: :delete_all
 
     timestamps()
   end
@@ -72,8 +74,7 @@ defmodule Blog.Accounts.User do
   end
 
   # If you are using Bcrypt or Pbkdf2, change Argon2 to Bcrypt or Pbkdf2
-  defp put_pass_hash(%Ecto.Changeset{valid?: true, changes:
-      %{password: password}} = changeset) do
+  defp put_pass_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
     change(changeset, Bcrypt.add_hash(password))
   end
 

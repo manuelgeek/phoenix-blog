@@ -17,7 +17,7 @@ defmodule BlogWeb.UserController do
     render(conn, "index.html", users: users)
   end
 
-  def new(conn, _) do
+  def new(conn, _params) do
     changeset = Accounts.change_user(%User{})
     render(conn, "auth/register.html", changeset: changeset)
   end
@@ -27,20 +27,27 @@ defmodule BlogWeb.UserController do
       {:ok, user} ->
         Log.info(%Log{user: user.id, message: "user created"})
 
+        Accounts.create_account(%{
+          "user_id" => user.id,
+          "avatar" => "/dist/img/clients/client-1.jpg"
+        })
+
         conn
         |> add_session(user, user_params)
         |> put_flash(:info, "User created successfully.")
-#        |> redirect(to: Routes.session_path(conn, :new))
+        #        |> redirect(to: Routes.session_path(conn, :new))
         |> redirect(to: Routes.post_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        IO.inspect changeset
+        IO.inspect(changeset)
         render(conn, "auth/register.html", changeset: changeset)
     end
   end
 
   def show(%Plug.Conn{assigns: %{current_user: user}} = conn, %{"id" => username}) do
-    user = if username == to_string(user.username), do: user, else: Accounts.get_by_username!(username)
+    user =
+      if username == to_string(user.username), do: user, else: Accounts.get_by_username!(username)
+
     render(conn, "show.html", user: user)
   end
 
@@ -49,12 +56,27 @@ defmodule BlogWeb.UserController do
     render(conn, "edit.html", user: user, changeset: changeset)
   end
 
-  def update(%Plug.Conn{assigns: %{current_user: user}} = conn, %{"user" => user_params}) do
+  def update(%Plug.Conn{assigns: %{current_user: user}} = conn, %{
+        "user" => user_params,
+        "account" => account_params
+      }) do
     case Accounts.update_user(user, user_params) do
       {:ok, user} ->
-        conn
-        |> put_flash(:info, "User updated successfully.")
-        |> redirect(to: Routes.user_path(conn, :show, user.username))
+        account_params =
+          Map.merge(account_params, %{
+            "user_id" => user.id
+          })
+
+        case Accounts.update_account(user.account, account_params) do
+          {:ok, _account} ->
+            conn
+            # |> add_session(user, user_params)
+            |> put_flash(:info, "User updated successfully.")
+            |> redirect(to: Routes.user_path(conn, :show, user.username))
+
+          {:error, %Ecto.Changeset{} = changeset} ->
+            render(conn, "edit.html", user: user, changeset: changeset)
+        end
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", user: user, changeset: changeset)

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa23be9-406f-44d8-b0b5-5e6fe1c7149e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/.mix/compile.elixir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/ebin/Elixir.Blog.Accounts.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/ebin/Elixir.Blog.Accounts.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/ebin/Elixir.BlogWeb.PostView.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/ebin/Elixir.BlogWeb.PostView.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/ebin/blog.app" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/blog/ebin/blog.app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/blog/ebin/Elixir.Blog.Accounts.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/blog/ebin/Elixir.Blog.Accounts.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/blog/ebin/Elixir.BlogWeb.PostView.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/blog/ebin/Elixir.BlogWeb.PostView.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog/accounts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog/accounts.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/new.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/new.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blog_web/templates/post/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/blog/accounts_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/blog/accounts_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/VueProjects/droidconke2020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -86,6 +94,7 @@
       <workItem from="1581405886782" duration="5847000" />
       <workItem from="1581583855388" duration="3875000" />
       <workItem from="1581615101724" duration="2003000" />
+      <workItem from="1582030129620" duration="198000" />
     </task>
     <servers />
   </component>
@@ -105,10 +114,10 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="369" y="137" width="618" height="514" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1366.743@0.25.1366.743" timestamp="1581247080564" />
-    <state x="519" y="211" width="318" height="366" key="FileChooserDialogImpl" timestamp="1581334981042">
+    <state x="519" y="211" width="318" height="366" key="FileChooserDialogImpl" timestamp="1582030325031">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="519" y="211" width="318" height="366" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1581334981042" />
+    <state x="519" y="211" width="318" height="366" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1582030325031" />
     <state x="303" y="119" key="SettingsEditor" timestamp="1581335102148">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
