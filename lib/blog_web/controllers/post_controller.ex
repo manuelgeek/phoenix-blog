@@ -15,14 +15,14 @@ defmodule BlogWeb.PostController do
 
   def index(conn, params) do
     page = Posts.list_posts(params)
-#    IO.inspect page
+    #    IO.inspect page
     render(conn, "index.html", posts: page.entries, page: page)
   end
-  
+
   def tag(conn, params) do
     try do
       tag = Tags.get_by_name!(params["tag"])
-      page = Posts.list_tag_posts(params,tag.name)
+      page = Posts.list_tag_posts(params, tag.name)
       render(conn, "index.html", posts: page.entries, page: page, title: tag.name)
     rescue
       Ecto.NoResultsError ->
@@ -30,7 +30,7 @@ defmodule BlogWeb.PostController do
         Helper.nothing_found(conn)
     end
   end
-  
+
   def category(conn, params) do
     try do
       category = Categories.get_by_slug!(params["category"])
@@ -42,7 +42,7 @@ defmodule BlogWeb.PostController do
         Helper.nothing_found(conn)
     end
   end
-  
+
   def user(conn, params) do
     try do
       user = Accounts.get_by_username!(params["username"])
@@ -63,11 +63,18 @@ defmodule BlogWeb.PostController do
 
   def create(conn, %{"post" => post_params}) do
     slug = Helper.slugified_title(post_params["title"])
-    post_params = Map.merge(post_params, %{"status" => true, "slug" => slug, "user_id" => conn.assigns.current_user.id})
-    
+
+    post_params =
+      Map.merge(post_params, %{
+        "status" => true,
+        "slug" => slug,
+        "user_id" => conn.assigns.current_user.id
+      })
+
     case Posts.create_post(post_params) do
       {:ok, post} ->
         Tags.associate_tags(post_params["tagged"], post)
+
         conn
         |> put_flash(:success, "Post created successfully.")
         |> redirect(to: Routes.post_path(conn, :show, post.slug))
@@ -79,7 +86,7 @@ defmodule BlogWeb.PostController do
   end
 
   def show(conn, params) do
-#    %{"id" => id}
+    #    %{"id" => id}
     post = Posts.get_by_slug!(params["id"])
     comments = Posts.list_comments(params, post.id)
     render(conn, "show.html", post: post, comments: comments)
@@ -113,22 +120,23 @@ defmodule BlogWeb.PostController do
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: Routes.post_path(conn, :index))
   end
-  
+
   def create_comment(conn, params) do
     %{"post_slug" => post_slug, "comment" => comment_params} = params
     post = Posts.get_by_slug!(post_slug)
-    comment_params = Map.merge(comment_params, %{"post_id" => post.id, "user_id" => conn.assigns.current_user.id})
+
+    comment_params =
+      Map.merge(comment_params, %{"post_id" => post.id, "user_id" => conn.assigns.current_user.id})
+
     case Posts.create_comment(comment_params) do
       {:ok, _comment} ->
         conn
         |> put_flash(:success, "Comment created successfully.")
         |> redirect(to: Routes.post_path(conn, :show, post.slug))
-    
+
       {:error, %Ecto.Changeset{} = changeset} ->
         comments = Posts.list_comments(params, post.id)
         conn |> render("show.html", post: post, changeset: changeset, comments: comments)
     end
-    
   end
-  
 end

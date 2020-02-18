@@ -5,4 +5,5 @@
  <a href="<%= Routes.post_path(@conn, :tag, tag.name) %>"><%= tag.name %></a>,
 <% end %>
 </span>
-<span><i class="fa fa-comments"></i> <a href="#">12 Comments</a></span>
+
+<span><i class="fa fa-comments "></i> <a href="#">12 Comments</a></span>

@@ -52,6 +52,13 @@ config :logger, level: :info
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
+# Configure your database
+config :hello, Hello.Repo,
+       adapter: Ecto.Adapters.Postgres,
+       pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+       ssl: true,
+       url: System.get_env("DATABASE_URL")
+       
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
 #import_config "prod.secret.exs"
