@@ -58,7 +58,7 @@ config :hello, Hello.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true,
   url: System.get_env("DATABASE_URL"),
-  show_sensitive_data_on_connection_error: true,
+  show_sensitive_data_on_connection_error: true
 
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
