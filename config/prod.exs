@@ -50,15 +50,15 @@ config :logger, level: :info
 #     config :blog, BlogWeb.Endpoint,
 #       force_ssl: [hsts: true]
 #
-# Check `Plug.SSL` for all available options in `force_ssl`.
+# Check `Plug.SSL` foheroku pg:diagnose --app sushir all available options in `force_ssl`.
 
 # Configure your database
 config :hello, Hello.Repo,
   adapter: Ecto.Adapters.Postgres,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true,
-  url: System.get_env("HEROKU_POSTGRESQL_SILVER_URL"),
-  show_sensitive_data_on_connection_error: true
+  url: System.get_env("DATABASE_URL"),
+  show_sensitive_data_on_connection_error: true,
 
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
