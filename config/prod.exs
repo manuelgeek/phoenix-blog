@@ -10,6 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :blog, BlogWeb.Endpoint,
+  http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "phx-blog-manu.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
@@ -55,9 +56,9 @@ config :logger, level: :info
 # Configure your database
 config :hello, Hello.Repo,
   adapter: Ecto.Adapters.Postgres,
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true,
   url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true
   show_sensitive_data_on_connection_error: true
 
 # Finally import the config/prod.secret.exs which loads secrets
