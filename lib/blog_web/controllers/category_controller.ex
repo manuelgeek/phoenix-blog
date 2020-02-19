@@ -19,6 +19,7 @@ defmodule BlogWeb.CategoryController do
   def create(conn, %{"category" => category_params}) do
     slug = slugified_title(category_params["name"])
     category_params = Map.put(category_params, "slug", slug)
+
     case Categories.create_category(category_params) do
       {:ok, _category} ->
         conn
@@ -66,7 +67,7 @@ defmodule BlogWeb.CategoryController do
 
   defp slugified_title(title) do
     title
-    |> String.downcase
+    |> String.downcase()
     |> String.replace(~r/[^a-z0-9\s-]/, "")
     |> String.replace(~r/(\s|-)+/, "-")
   end

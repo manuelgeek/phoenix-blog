@@ -2,7 +2,6 @@ defmodule Blog.Tags do
   @moduledoc """
 """
   import Ecto.Query, warn: false
-  import Ecto.Changeset
   alias Blog.Repo
 
   alias Blog.Posts.Tag

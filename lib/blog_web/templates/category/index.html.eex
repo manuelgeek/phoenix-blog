@@ -45,4 +45,5 @@
 
 </div>
 
-<span><%= link "New Category", to: Routes.category_path(@conn, :new) %></span>
+<span><%= link "New Category", to: "/category/create" %></span>
+<%# <span><%= link "New Category", to: Routes.category_path(@conn, :new) </span> %>

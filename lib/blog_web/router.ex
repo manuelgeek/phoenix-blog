@@ -27,12 +27,13 @@ defmodule BlogWeb.Router do
     get "/", PostController, :index
     get "/tags/:tag", PostController, :tag
     get "/categories/:category", PostController, :category
-    get "/posts/:username", PostController, :user
+    get "/posts/user/:username", PostController, :user
     post "/comments/create/:post_slug", PostController, :create_comment
     resources "/posts", PostController
     resources "/users", UserController, except: [:new, :create, :index]
-#    resources "/sessions", SessionController, only: [:new, :create, :delete]
-    resources "/categories", CategoryController
+    #    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/categories", CategoryController #except: [:show]
+    get "/category/create", CategoryController, :new, as: :cat
   end
 
   # Other scopes may use custom stacks.

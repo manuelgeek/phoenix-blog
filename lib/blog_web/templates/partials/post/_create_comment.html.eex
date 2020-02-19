@@ -2,7 +2,7 @@
 <%= if @current_user !== nil do %>
     <h3>Leave a comment</h3>
 
-    <%= form_for @conn, Routes.post_path(@conn, :create_comment, @post.slug), [as: :comment], fn f -> %>
+    <%= form_for @conn, Routes.post_path(@conn, :create_comment, @post.slug), [as: :comment], fn _f -> %>
         <div class="row">
             <div class="form-group">
                 <div class="col-md-12">
