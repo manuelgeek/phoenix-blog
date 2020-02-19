@@ -6,24 +6,24 @@
       </a>
     </div>
     <div class="search">
-      <form id="searchForm" action="page-search-results.html" method="get">
+      <%# <form id="searchForm" action="page-search-results.html" method="get">
         <div class="input-group">
           <input type="text" class="form-control search" name="q" id="q" placeholder="Search..." required>
           <span class="input-group-btn">
             <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
           </span>
         </div>
-      </form>
+      </form> %>
     </div>
     <ul class="social-icons">
-      <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
-      <li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
-      <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+      <li class="facebook"><a href="http://www.facebook.com/onyachmagak" target="_blank" title="Facebook">Facebook</a></li>
+      <li class="twitter"><a href="http://www.twitter.com/emashmagak" target="_blank" title="Twitter">Twitter</a></li>
+      <li class="linkedin"><a href="http://www.linkedin.com/manuelgeek" target="_blank" title="Linkedin">Linkedin</a></li>
     </ul>
     <nav>
       <ul class="nav nav-pills nav-top">
         <li class="phone">
-          <span><i class="fa fa-phone"></i>(123) 456-7890</span>
+          <span><i class="fa fa-phone"></i>(+254) 724 540039</span>
         </li>
       </ul>
     </nav>

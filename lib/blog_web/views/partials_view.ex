@@ -3,9 +3,14 @@ defmodule BlogWeb.PartialsView do
   alias Blog.Categories
   alias Blog.Posts
   import Scrivener.HTML
+  alias Blog.Tags
 
   def categories do
     Categories.list_active_categories()
+  end
+
+  def tags do
+    Tags.list_tags()
   end
 
   def latest_posts do

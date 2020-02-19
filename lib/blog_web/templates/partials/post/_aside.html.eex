@@ -1,79 +1,79 @@
 <div class="col-md-3">
-    <aside class="sidebar">
-
-        <form>
-            <div class="input-group input-group-lg">
-                <input class="form-control" placeholder="Search..." name="s" id="s" type="text">
-                <span class="input-group-btn">
-                    <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-        </form>
-
-        <hr />
-
-        <h4>Categories</h4>
-        <ul class="nav nav-list primary push-bottom">
-        <%= for cat <- categories() do %>
-            <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
-        <% end %>
-        </ul>
-
-        <div class="tabs">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#popularPosts" data-toggle="tab"><i class="fa fa-star"></i> Popular</a></li>
-                <li><a href="#recentPosts" data-toggle="tab">Recent</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="popularPosts">
-                    <ul class="simple-post-list">
-                        <%= for post <- popular_posts() do %>
-                       <li>
-                           <div class="post-image">
-                               <div class="img-thumbnail">
-                                   <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
-                                       <img width="50" src="<%= Routes.static_path(@conn, post.image) %>" alt="recent post image">
-                                   </a>
-                               </div>
-                           </div>
-                           <div class="post-info">
-                               <a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a>
-                               <div class="post-meta">
-                                    <%= date post.inserted_at %>
-                               </div>
-                           </div>
-                       </li>
-                      <% end %>
-                    </ul>
+  <aside class="sidebar">
+    <%# <form>
+      <div class="input-group input-group-lg">
+        <input class="form-control" placeholder="Search..." name="s" id="s" type="text">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form> %>
+    <%# <hr /> %>
+    <h5>Tags</h5>
+    <%= for tag <- tags() do %>
+      <a href="<%= Routes.post_path(@conn, :tag, tag.name) %>"><span class="label label-dark"><%= tag.name %></span></a>
+    <% end %>
+    <hr/>
+    <h4>Categories</h4>
+    <ul class="nav nav-list primary push-bottom">
+      <%= for cat <- categories() do %>
+        <li><a href="<%= Routes.post_path(@conn, :category, cat.slug) %>"><%= cat.name %></a></li>
+      <% end %>
+    </ul>
+    <div class="tabs">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#popularPosts" data-toggle="tab"><i class="fa fa-star"></i> Popular</a></li>
+        <li><a href="#recentPosts" data-toggle="tab">Recent</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="popularPosts">
+          <ul class="simple-post-list">
+            <%= for post <- popular_posts() do %>
+              <li>
+                <div class="post-image">
+                  <div class="img-thumbnail">
+                    <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
+                      <img width="50" src="<%= Routes.static_path(@conn, post.image) %>" alt="recent post image">
+                    </a>
+                  </div>
                 </div>
-                <div class="tab-pane" id="recentPosts">
-                    <ul class="simple-post-list">
-                      <%= for post <- latest_posts() do %>
-                       <li>
-                           <div class="post-image">
-                               <div class="img-thumbnail">
-                                   <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
-                                       <img width="50" src="<%= Routes.static_path(@conn, post.image) %>" alt="recent post image">
-                                   </a>
-                               </div>
-                           </div>
-                           <div class="post-info">
-                               <a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a>
-                               <div class="post-meta">
-                                    <%= date post.inserted_at %>
-                               </div>
-                           </div>
-                       </li>
-                      <% end %>
-                    </ul>
+                <div class="post-info">
+                  <a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a>
+                  <div class="post-meta">
+                    <%= date post.inserted_at %>
+                  </div>
                 </div>
-            </div>
+              </li>
+            <% end %>
+          </ul>
         </div>
-
-        <hr />
-
-        <h4>About Us</h4>
-        <p>Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. Nulla nunc dui, tristique in semper vel. Nam dolor ligula, faucibus id sodales in, auctor fringilla libero. </p>
-
-    </aside>
+        <div class="tab-pane" id="recentPosts">
+          <ul class="simple-post-list">
+            <%= for post <- latest_posts() do %>
+              <li>
+                <div class="post-image">
+                  <div class="img-thumbnail">
+                    <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
+                      <img width="50" src="<%= Routes.static_path(@conn, post.image) %>" alt="recent post image">
+                    </a>
+                  </div>
+                </div>
+                <div class="post-info">
+                  <a href="<%= Routes.post_path(@conn, :show, post.slug) %>"><%= post.title %></a>
+                  <div class="post-meta">
+                    <%= date post.inserted_at %>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h4>About Us</h4>
+    <p>This is the first Phoenix Elixir App by Myself, still under development on testing various Elixir awesome features.
+      <a href="https://github.com/manuelgeek/phoenix-blog">Github</a>
+    </p>
+  </aside>
 </div>
