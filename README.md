@@ -1,4 +1,10 @@
+<p align="center"><img src="https://magak.me/assets/images/Geek-logo.png" width="150"></p>
+
 # Blog
+
+> A sample blog app written with Phoenix Framework 
+
+## Set Up
 
 To start your Phoenix server:
 

@@ -35,6 +35,8 @@
 		<!-- Head Libs -->
 		<script src="<%= Routes.static_path(@conn, "/dist/vendor/modernizr/modernizr.js") %>"></script>
 
+
+
 		<!--[if IE]>
 			<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/dist/css/ie.css") %>">
 		<![endif]-->

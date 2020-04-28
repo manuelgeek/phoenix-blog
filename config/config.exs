@@ -33,8 +33,19 @@ config :phoenix, :json_library, Jason
 
 # Configuration for scrivener_html
 config :scrivener_html,
-       routes_helper: Paging.Router.Helpers,
-       view_style: :bootstrap
+  routes_helper: Paging.Router.Helpers,
+  view_style: :bootstrap
+
+config :phx_izitoast, :opts,
+  # bottomRight, bottomLeft, topRight, topLeft, topCenter, 
+  position: "topRight",
+  # dark,
+  theme: "light",
+  timeout: 5000,
+  close: true,
+  titleSize: 18,
+  messageSize: 18,
+  progressBar: true
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

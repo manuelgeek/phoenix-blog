@@ -9,6 +9,7 @@ defmodule BlogWeb.PostController do
   alias Blog.Categories
   alias Blog.Helpers.Helper
   alias Blog.Accounts
+  alias Blog.Toast.IziToast
 
   plug :user_check when action in [:new, :create]
   plug :id_check when action in [:edit, :update, :delete]
@@ -16,7 +17,11 @@ defmodule BlogWeb.PostController do
   def index(conn, params) do
     page = Posts.list_posts(params)
     #    IO.inspect page
-    render(conn, "index.html", posts: page.entries, page: page)
+    conn
+    |> IziToast.message("message")
+    |> IziToast.success("title", "message")
+    |> IziToast.info("title", "awesome", position: "bottomRight")
+    |> render("index.html", posts: page.entries, page: page)
   end
 
   def tag(conn, params) do
