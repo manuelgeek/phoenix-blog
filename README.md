@@ -2,7 +2,9 @@
 
 # Blog
 
-> A sample blog app written with Phoenix Framework 
+> My First Phoenix Project
+
+> A sample blog app written with Phoenix Framework for learning purposes
 
 ## Set Up
 
